@@ -1,51 +1,126 @@
-body {
+* {
     margin: 0;
-    font-size: 28px;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+}
+
+body {
+    background-color: #3c3c3c;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    /* text-align: center; */
 }
 
 .header {
-    background-color: #333;
-    padding: 30px;
-    text-align: center;
+    background-color: #6c6a6a;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 15px 10px 15px 15px;
+    vertical-align: middle;
 }
 
-#navbar {
-    overflow: hidden;
-    background-color: #333;
+.LoginBtn {
+    border: none;
+    padding: 7px;
+    /* margin-top: 15px; */
+    background-color: #ef4d4d;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    vertical-align: middle;
 }
 
-#navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
+.nav a {
+    font-size: 20px;
     text-decoration: none;
-    font-size: 17px;
-}
-
-#navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-#navbar a.active {
-    background-color: #04AA6D;
     color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    vertical-align: middle;
 }
 
-.content {
-    padding: 16px;
+main {
+    display: flex;
+    justify-content: center;
 }
 
-.sticky {
-    position: fixed;
-    top: 0;
+.gameCard {
+    background-color: rgba(66, 66, 66, 0.6);
+    border-radius: 5px;
+    width: 20%;
+    margin: 5% 5% 5% 5%;
+    padding: 15px;
+    text-align: center;
+}
+
+.gameRating {
+    color: #e8c500;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.gameButton {
+    border: none;
+    padding: 7px;
+    margin-top: 15px;
+    background-color: #3c3c3c;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.gameButton:hover {
+    cursor: pointer;
+    background-color: #6c6a6a;
+}
+
+.gameCard h1 {
+    font-size: 26px;
+    font-weight: bold;
+    /* text-align: left; */
+}
+
+.gameDescription {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.topRatedGames {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.gameCard img {
     width: 100%;
+    /* height: 100%; */
+    aspect-ratio: 1/1;
+    border-radius: 5px;
 }
 
-.sticky+.content {
-    padding-top: 60px;
+.gameCard:hover {
+    transform: scale(1.1);
+    background-color: rgba(77, 77, 77, 0.7);
+    transition: transform 250ms ease-in;
+    cursor: -webkit-zoom-in;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.LoginBtn:hover {
+    cursor: pointer;
+    background-color: #d73434;
+}
+
+button:hover {
+    cursor: pointer;
 }
