@@ -35,6 +35,11 @@ body {
     vertical-align: middle;
 }
 
+.nav {
+    padding-top: 7px;
+}
+
+
 .nav a {
     font-size: 20px;
     text-decoration: none;
@@ -42,6 +47,11 @@ body {
     padding-left: 30px;
     padding-right: 30px;
     /* vertical-align: middle; */
+}
+
+.nav a:hover {
+    opacity: 0.6;
+    transition: ease-in-out 300ms;
 }
 
 /* main {
