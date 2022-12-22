@@ -44,10 +44,10 @@ body {
     /* vertical-align: middle; */
 }
 
-main {
+/* main {
     display: flex;
     justify-content: center;
-}
+} */
 
 .gameCard {
     background-color: rgba(66, 66, 66, 0.6);
@@ -130,15 +130,25 @@ button:hover {
     display: none
 }
 
-img {
+/* img {
     vertical-align: middle;
-}
+} */
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 1000px;
+    /* max-width: 1000px; */
+    width: 60vw;
+    max-height: 80vh;
+    height: 80vh;
     position: relative;
     margin: auto;
+    object-fit: fit;
+}
+
+.slideshow-container img {
+    max-height: 80vh;
+    height: 80vh;
+    object-fit: contain;
 }
 
 /* Next & previous buttons */
