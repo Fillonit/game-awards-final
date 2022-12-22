@@ -138,16 +138,14 @@ button:hover {
 .slideshow-container {
     /* max-width: 1000px; */
     width: 60vw;
-    max-height: 80vh;
-    height: 80vh;
+    aspect-ratio: 1/0.7;
     position: relative;
     margin: auto;
     object-fit: fit;
 }
 
 .slideshow-container img {
-    max-height: 80vh;
-    height: 80vh;
+    aspect-ratio: 1/0.7;
     object-fit: contain;
 }
 
