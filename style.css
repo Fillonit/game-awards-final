@@ -1,51 +1,242 @@
-body {
+* {
     margin: 0;
-    font-size: 28px;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3c3c3c;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    /* text-align: center; */
 }
 
 .header {
-    background-color: #333;
-    padding: 30px;
-    text-align: center;
+    background-color: #6c6a6a;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 15px 10px 15px 15px;
+    vertical-align: middle;
 }
 
-#navbar {
-    overflow: hidden;
-    background-color: #333;
+.LoginBtn {
+    border: none;
+    padding: 7px;
+    /* margin-top: 15px; */
+    background-color: #ef4d4d;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    vertical-align: middle;
 }
 
-#navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
+.nav a {
+    font-size: 20px;
     text-decoration: none;
-    font-size: 17px;
-}
-
-#navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-#navbar a.active {
-    background-color: #04AA6D;
     color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* vertical-align: middle; */
 }
 
-.content {
-    padding: 16px;
+/* main {
+    display: flex;
+    justify-content: center;
+} */
+
+.gameCard {
+    background-color: rgba(66, 66, 66, 0.6);
+    border-radius: 5px;
+    width: 20%;
+    margin: 5% 5% 5% 5%;
+    padding: 15px;
+    text-align: center;
 }
 
-.sticky {
-    position: fixed;
-    top: 0;
+.gameRating {
+    color: #e8c500;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.gameButton {
+    border: none;
+    padding: 7px;
+    margin-top: 15px;
+    background-color: #3c3c3c;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.gameButton:hover {
+    cursor: pointer;
+    background-color: #6c6a6a;
+}
+
+.gameCard h1 {
+    font-size: 26px;
+    font-weight: bold;
+    /* text-align: left; */
+}
+
+.gameDescription {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.topRatedGames {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.gameCard img {
     width: 100%;
+    /* height: 100%; */
+    aspect-ratio: 1/1;
+    border-radius: 5px;
 }
 
-.sticky+.content {
-    padding-top: 60px;
+.gameCard:hover {
+    transform: scale(1.1);
+    background-color: rgba(77, 77, 77, 0.7);
+    transition: transform 250ms ease-in;
+    cursor: -webkit-zoom-in;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.LoginBtn:hover {
+    cursor: pointer;
+    background-color: #d73434;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.mySlides {
+    display: none
+}
+
+/* img {
+    vertical-align: middle;
+} */
+
+/* Slideshow container */
+.slideshow-container {
+    /* max-width: 1000px; */
+    width: 60vw;
+    aspect-ratio: 1/0.7;
+    position: relative;
+    margin: auto;
+    object-fit: fit;
+}
+
+.slideshow-container img {
+    aspect-ratio: 1/0.7;
+    object-fit: contain;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
 }
