@@ -10,10 +10,47 @@
     <link rel="shortcut icon" href="assets/img/nocticon.png" type="image/x-icon">
     <link rel="stylesheet" href="login.css">
     <script src="login.js" defer></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+
+            background-color: #131313;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 20px;
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="container">
+        <div class="title-bar">
+            <div onclick="exitLogin()">&times;</div>
+            <div>&#95;</div>
+        </div>
+        <div class="content">
+            <div class="logo"></div>
+            <div class="form">
+                <input class="textfield" type="text" placeholder="Username" />
+                <input class="textfield" type="password" placeholder="Password" />
+                <div class="button-group">
+                    <button class="btn login">Login</button>
+                    <button class="btn">Cancel</button>
+                </div><a class="forgot-password" href="#">Forgotten your password?</a>
+                <hr class="separator" />
+                <button class="btn">Create Account</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

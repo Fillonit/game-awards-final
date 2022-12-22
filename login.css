@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+
+.container {
+    width: 450px;
+    height: 455px;
+}
+
+.container * {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: #1C1D1F;
+    border: 2px solid #101012;
+}
+
+.container .title-bar {
+    height: 20px;
+    color: #FFFFFF;
+}
+
+.container .title-bar div {
+    float: right;
+    line-height: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.container .title-bar div:hover {
+    background-color: #282a2c;
+}
+
+.container .content {
+    margin: 30px;
+}
+
+.container .content .logo {
+    background-image: url('./assets/img/noctlogo1.png');
+    background-size: cover;
+    width: 300px;
+    height: 90px;
+    margin: 50px auto;
+}
+
+.container .content .form * {
+    margin: 6px 0;
+}
+
+.container .content .form .button-group .btn {
+    width: 49%;
+}
+
+.container .content .form .button-group .btn:nth-child(2) {
+    float: right;
+}
+
+.container .content .form .button-group .btn:nth-child(1) {
+    float: left;
+}
+
+.container .content .form .button-group .btn.login {
+    background-color: #11f285;
+}
+
+.container .content .form .button-group .btn.login:hover {
+    background-color: #0eca6f;
+}
+
+.container .content .form .forgot-password {
+    text-decoration: none;
+    color: #5D5D5D;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+.container .content .form .forgot-password:hover {
+    color: #777777;
+}
+
+.container .content .form .separator {
+    border: 1px solid #5D5D5D;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 10px 0;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: #5D5D5D;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #505050;
+}
+
+.textfield {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #1C1D1F;
+    color: #FFFFFF;
+    border: 2px solid #5D5D5D;
+    outline: 0;
+}
+
+input:focus {
+    border: 2px solid #11f285;
+}
