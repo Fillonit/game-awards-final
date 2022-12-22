@@ -78,6 +78,7 @@
 
 .container .content .form .button-group .btn.login:hover {
     background-color: #0eca6f;
+    /* background-color: #f2117e; */
 }
 
 .container .content .form .forgot-password {
