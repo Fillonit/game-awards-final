@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #3c3c3c;
+    background-color: #282a2c;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-    background-color: #6c6a6a;
+    background-color: #1C1D1F;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -129,7 +129,7 @@ a:hover {
 
 .LoginBtn:hover {
     cursor: pointer;
-    background-color: #d73434;
+    background-color: #0eca6f;
 }
 
 button:hover {
@@ -249,4 +249,11 @@ button:hover {
     .text {
         font-size: 11px
     }
+}
+
+.logo,
+.logo img {
+    text-decoration: none;
+    color: #11f285;
+    height: 40px;
 }
