@@ -33,6 +33,8 @@ body {
     font-weight: bold;
     border-radius: 5px;
     vertical-align: middle;
+    height: 50px;
+    aspect-ratio: 2/1
 }
 
 .nav {
