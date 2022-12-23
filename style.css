@@ -5,7 +5,9 @@
 }
 
 body {
-    background-color: #282a2c;
+    /* background-color: #282a2c; */
+    background: linear-gradient(to top, #434547, #282a2c, #1C1D1F, #151617);
+    background-repeat: no-repeat;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
@@ -29,12 +31,12 @@ body {
     /* margin-top: 15px; */
     background-color: #11f285;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
     vertical-align: middle;
-    height: 50px;
-    aspect-ratio: 2/1
+    height: 35px;
+    width: 100px;
 }
 
 .nav {
@@ -56,13 +58,8 @@ body {
     transition: ease-in-out 300ms;
 }
 
-/* main {
-    display: flex;
-    justify-content: center;
-} */
-
 .gameCard {
-    background-color: rgba(66, 66, 66, 0.6);
+    background-color: rgba(66, 66, 66, 0.8);
     border-radius: 5px;
     width: 20%;
     margin: 5% 5% 5% 5%;
@@ -258,4 +255,42 @@ button:hover {
     text-decoration: none;
     color: #11f285;
     height: 40px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+footer nav li {
+    margin: 0 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ccc;
 }

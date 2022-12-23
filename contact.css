@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    /* background-color: #282a2c; */
+    background: linear-gradient(to top, #434547, #282a2c, #1C1D1F, #151617);
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    /* text-align: center; */
+}
+
+.header {
+    background-color: #1C1D1F;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 15px 10px 15px 15px;
+    vertical-align: middle;
+}
+
+.LoginBtn {
+    border: none;
+    padding: 7px;
+    /* margin-top: 15px; */
+    background-color: #11f285;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    vertical-align: middle;
+    height: 35px;
+    width: 100px;
+}
+
+.nav {
+    padding-top: 7px;
+}
+
+
+.nav a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* vertical-align: middle; */
+}
+
+.nav a:hover {
+    opacity: 0.6;
+    transition: ease-in-out 300ms;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.LoginBtn:hover {
+    cursor: pointer;
+    background-color: #0eca6f;
+}
+
+.logo,
+.logo img {
+    text-decoration: none;
+    color: #11f285;
+    height: 40px;
+}
+
+form {
+    width: 35%;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 7px;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form {
+    margin-top: 50px;
+    margin-bottom: 25vh;
+}
+
+#bigText {
+    text-align: center;
+    vertical-align: center;
+    margin-top: 25vh;
+}

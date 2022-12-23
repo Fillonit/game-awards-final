@@ -8,6 +8,9 @@
     <title>Noctus - Game Reviews & Awards</title>
 
     <link rel="shortcut icon" href="assets/img/nocticon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,163 +26,179 @@
             <a href="/games">Games</a>
         </div>
 
-        <a href="/login"><button class="LoginBtn">Login</button></a>
+        <a href="/login"><button class="LoginBtn">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
+    </div>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="https://sm.ign.com/ign_nordic/gallery/e/elden-ring/elden-ring-summer-game-fest-trailer-screenshots_9qxm.jpg"
+                style="width:100%">
+            <div class="text">Elden Ring</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://www.gameinformer.com/sites/default/files/styles/full/public/2022/08/29/bcd58814/gowcover.jpg"
+                style="width:100%">
+            <div class="text">God Of War</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/01/yakuza-2-3.jpg"
+                style="width:100%">
+            <div class="text">Yakuza 0</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    </div>
     <main>
-        <div class="slideshow-container">
-
-            <div class="mySlides fade">
-                <img src="https://sm.ign.com/ign_nordic/gallery/e/elden-ring/elden-ring-summer-game-fest-trailer-screenshots_9qxm.jpg"
-                    style="width:100%">
-                <div class="text">Elden Ring</div>
+        <div class="topRatedGames">
+            <div class="gameCard">
+                <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
+                    alt="" class="gameImg">
+                <h1 class="gameTitle">
+                    <span class="title">Game Title</span>
+                </h1>
+                <h2 class="gameRating">10/10</h2>
+                <p class="gameDescription">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
+                    doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt
+                    minus
+                    aspernatur iure magnam minima quam.
+                </p>
+                <button class="gameButton">Open Review</button>
             </div>
-
-            <div class="mySlides fade">
-                <img src="https://www.gameinformer.com/sites/default/files/styles/full/public/2022/08/29/bcd58814/gowcover.jpg"
-                    style="width:100%">
-                <div class="text">God Of War</div>
+            <div class="gameCard">
+                <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
+                    alt="" class="gameImg">
+                <h1 class="gameTitle">
+                    <span class="title">Game Title</span>
+                </h1>
+                <h2 class="gameRating">10/10</h2>
+                <p class="gameDescription">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
+                    doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt
+                    minus
+                    aspernatur iure magnam minima quam.
+                </p>
+                <button class="gameButton">Open Review</button>
             </div>
-
-            <div class="mySlides fade">
-                <img src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/01/yakuza-2-3.jpg"
-                    style="width:100%">
-                <div class="text">Yakuza 0</div>
+            <div class="gameCard">
+                <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
+                    alt="" class="gameImg">
+                <h1 class="gameTitle">
+                    <span class="title">Game Title</span>
+                </h1>
+                <h2 class="gameRating">10/10</h2>
+                <p class="gameDescription">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
+                    doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt
+                    minus
+                    aspernatur iure magnam minima quam.
+                </p>
+                <button class="gameButton">Open Review</button>
             </div>
-
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-
-        </div>
-        <br>
-
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-
-        <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                if (n > slides.length) {
-                    slideIndex = 1
-                }
-                if (n < 1) {
-                    slideIndex = slides.length
-                }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }
-        </script>
+            <div class="gameCard">
+                <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
+                    alt="" class="gameImg">
+                <h1 class="gameTitle">
+                    <span class="title">Game Title</span>
+                </h1>
+                <h2 class="gameRating">10/10</h2>
+                <p class="gameDescription">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
+                    doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt
+                    minus
+                    aspernatur iure magnam minima quam.
+                </p>
+                <button class="gameButton">Open Review</button>
+            </div>
+            <div class="gameCard">
+                <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
+                    alt="" class="gameImg">
+                <h1 class="gameTitle">
+                    <span class="title">Game Title</span>
+                </h1>
+                <h2 class="gameRating">10/10</h2>
+                <p class="gameDescription">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
+                    doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt
+                    minus
+                    aspernatur iure magnam minima quam.
+                </p>
+                <button class="gameButton">Open Review</button>
+            </div>
+            <div class="gameCard">
+                <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
+                    alt="" class="gameImg">
+                <h1 class="gameTitle">
+                    <span class="title">Game Title</span>
+                </h1>
+                <h2 class="gameRating">10/10</h2>
+                <p class="gameDescription">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
+                    doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt
+                    minus
+                    aspernatur iure magnam minima quam.
+                </p>
+                <button class="gameButton">Open Review</button>
+            </div>
         </div>
     </main>
-
-    <div class="topRatedGames">
-        <div class="gameCard">
-            <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
-                alt="" class="gameImg">
-            <h1 class="gameTitle">
-                <span class="title">Game Title</span>
-            </h1>
-            <h2 class="gameRating">10/10</h2>
-            <p class="gameDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
-                doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt minus
-                aspernatur iure magnam minima quam.
-            </p>
-            <button class="gameButton">Open Review</button>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; Copyright 2022</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="gameCard">
-            <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
-                alt="" class="gameImg">
-            <h1 class="gameTitle">
-                <span class="title">Game Title</span>
-            </h1>
-            <h2 class="gameRating">10/10</h2>
-            <p class="gameDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
-                doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt minus
-                aspernatur iure magnam minima quam.
-            </p>
-            <button class="gameButton">Open Review</button>
-        </div>
-        <div class="gameCard">
-            <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
-                alt="" class="gameImg">
-            <h1 class="gameTitle">
-                <span class="title">Game Title</span>
-            </h1>
-            <h2 class="gameRating">10/10</h2>
-            <p class="gameDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
-                doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt minus
-                aspernatur iure magnam minima quam.
-            </p>
-            <button class="gameButton">Open Review</button>
-        </div>
-        <div class="gameCard">
-            <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
-                alt="" class="gameImg">
-            <h1 class="gameTitle">
-                <span class="title">Game Title</span>
-            </h1>
-            <h2 class="gameRating">10/10</h2>
-            <p class="gameDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
-                doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt minus
-                aspernatur iure magnam minima quam.
-            </p>
-            <button class="gameButton">Open Review</button>
-        </div>
-        <div class="gameCard">
-            <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
-                alt="" class="gameImg">
-            <h1 class="gameTitle">
-                <span class="title">Game Title</span>
-            </h1>
-            <h2 class="gameRating">10/10</h2>
-            <p class="gameDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
-                doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt minus
-                aspernatur iure magnam minima quam.
-            </p>
-            <button class="gameButton">Open Review</button>
-        </div>
-        <div class="gameCard">
-            <img src="https://image.api.playstation.com/vulcan/img/cfn/11307j1RpBNVS6sPflgbkyL6MvOtcSbhGFbeRrJlrWCanJ-QqmTYypbJSlHkO7rkPbuIpwS_RCe9pIVcRrw81QdtCks1euGj.png"
-                alt="" class="gameImg">
-            <h1 class="gameTitle">
-                <span class="title">Game Title</span>
-            </h1>
-            <h2 class="gameRating">10/10</h2>
-            <p class="gameDescription">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat maiores iste adipisci
-                doloremque, quo reiciendis repellendus beatae tempore dolorum maxime. Delectus facilis deserunt minus
-                aspernatur iure magnam minima quam.
-            </p>
-            <button class="gameButton">Open Review</button>
-        </div>
-    </div>
+    </footer>
 </body>
 
 </html>
