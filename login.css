@@ -125,3 +125,13 @@
 input:focus {
     border: 2px solid #11f285;
 }
+
+#error {
+    color: white !important;
+    font-size: 10px;
+}
+
+.error::before {
+    content: '* ';
+    color: red;
+}

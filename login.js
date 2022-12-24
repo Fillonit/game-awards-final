@@ -3,10 +3,12 @@ function exitLogin() {
 }
 
 function inputFocus() {
-    console.log("Typing...");
+    document.getElementById('error').display = 'none';
+    document.getElementById('error').innerText = '';
+    document.getElementById('error').classList.remove('error');
 }
 
-document.querySelector("input[type=password]").addEventListener('focus', () => {
+document.querySelector("input").addEventListener('focus', () => {
     console.log("Entering password");
 });
 
@@ -17,7 +19,9 @@ document.getElementById('form').addEventListener('submit', function (event) {
 
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value == '' || inputs[i].value == null || inputs[i].value == undefined || inputs[i].value.length < 3) {
-            alert('Please fill out all the fields properly.');
+            // alert('Please fill out all the fields properly.');
+            document.getElementById('error').classList.add('error');
+            document.getElementById('error').innerText = 'Please fill out all the fields properly.';
             console.log('Not all fields have been filled.')
             return;
         }
