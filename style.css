@@ -6,7 +6,7 @@
 
 body {
     /* background-color: #282a2c; */
-    background: linear-gradient(to top, #434547, #282a2c, #1C1D1F, #151617);
+    background: linear-gradient(to top, #777a7d, #595e62, #424345, #151617);
     background-repeat: no-repeat;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -293,4 +293,38 @@ footer a {
 
 footer a:hover {
     color: #ccc;
+}
+
+.slideshow-container img {
+    object-fit: fit;
+    height: 500px;
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 500px;
+}
+
+.gameCard {
+    position: relative;
+    margin: 20px;
+    padding: 0px;
+    padding-bottom: 0px;
+    border-radius: 0px;
+}
+
+.gameCard img {
+    border-radius: 0px;
+}
+
+.gameCard h1 {
+    position: absolute;
+    left: 35%;
+    top: 60%;
+}
+
+.gameCard button {
+    border-radius: 0px;
+    width: 100%;
+    background-color: red;
 }
