@@ -317,11 +317,11 @@ footer a:hover {
     border-radius: 0px;
 }
 
-.gameCard h1 {
+/* .gameCard h1 {
     position: absolute;
     left: 35%;
     top: 60%;
-}
+} */
 
 .gameCard button {
     border-radius: 0px;
