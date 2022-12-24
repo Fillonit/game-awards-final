@@ -5,9 +5,9 @@
 }
 
 body {
-    /* background-color: #282a2c; */
-    background: linear-gradient(to top, #777a7d, #595e62, #424345, #151617);
-    background-repeat: no-repeat;
+    background-color: #2D323B;
+    /* background: linear-gradient(to top, #777a7d, #595e62, #424345, #151617);
+    background-repeat: no-repeat; */
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
@@ -33,7 +33,7 @@ body {
     color: white;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 0px;
     vertical-align: middle;
     height: 35px;
     width: 100px;
@@ -326,5 +326,35 @@ footer a:hover {
 .gameCard button {
     border-radius: 0px;
     width: 100%;
-    background-color: red;
+    background-color: #11f285;
+}
+
+.slideshow-container,
+.slideshow-container img {
+    padding: 0;
+    margin: 0;
+    height: 478px;
+    max-height: 478px;
+    top: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #11f285;
+    border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #0eca6f;
 }

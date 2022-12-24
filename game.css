@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+}
+
+body {
+    padding: 1rem;
+    background-color: #2D323B;
+}
+
+.d-steam-cards {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.d-steam-card-wrapper {
+    max-width: 250px;
+    min-width: 150px;
+    margin: 0;
+    flex: 0 1 16.66%;
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .d-steam-card-wrapper {
+        flex-basis: 20%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .d-steam-card-wrapper {
+        flex-basis: 25%;
+    }
+}
+
+.d-steam-card {
+    padding: 0 0 150% 0;
+    background: url("") no-repeat transparent 50% 50%;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 10px -2px rgba(0, 0, 0, 0.5);
+    transition: all ease 0.28s 0.01s;
+    transform: perspective(222px) translate3d(0px, 5px, 0px) rotateX(0deg);
+    perspective-origin: top;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.d-steam-card::before {
+    width: 100%;
+    height: 172%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-image: linear-gradient(35deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 51.5%, rgba(255, 255, 255, 0.15) 54%, rgba(255, 255, 255, 0.15) 100%);
+    transform: translateY(-36%);
+    opacity: 0.5;
+    transition: all ease 0.28s 0.01s;
+}
+
+.d-steam-card:hover,
+.d-steam-card:focus {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transform: perspective(222px) translate3d(0px, 0px, 8px) rotateX(3deg);
+    transform-origin: center;
+    box-shadow: 0 14px 16px -2px rgba(0, 0, 0, 0.5);
+}
+
+.d-steam-card:hover::before,
+.d-steam-card:focus::before {
+    opacity: 1;
+    transform: translateY(-20%);
+}
+
+.d-steam-card:active {
+    filter: brightness(80%) contrast(110%);
+}
