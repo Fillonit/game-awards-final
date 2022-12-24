@@ -39,8 +39,9 @@
         </div>
         <div class="content">
             <div class="logo"></div>
-            <div class="form">
+            <form class="form" id="form">
                 <input class="textfield" type="text" name="username" placeholder="Username" onfocus="inputFocus()" />
+                <p id="error"></p>
                 <input class="textfield" type="password" name="password" placeholder="Password"
                     onfocus="inputFocus()" />
                 <div class="button-group">
@@ -49,7 +50,7 @@
                 </div><a class="forgot-password" href="#">Forgotten your password?</a>
                 <hr class="separator" />
                 <button class="btn">Create Account</button>
-            </div>
+            </form>
         </div>
     </div>
 </body>
