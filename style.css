@@ -379,6 +379,7 @@ footer a:hover {
 
     .LoginBtn:before {
         content: '';
+        display: none;
     }
 
     .LoginBtn {
