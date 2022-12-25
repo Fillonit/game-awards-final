@@ -17,6 +17,8 @@ h1 {
 body {
     padding: 1rem;
     background-color: #2D323B;
+    text-align: cemter;
+    justify-content: center;
 }
 
 .d-steam-cards {
@@ -92,4 +94,10 @@ body {
 
 .d-steam-card:active {
     filter: brightness(80%) contrast(110%);
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    .d-steam-card-wrapper {
+        flex-basis: 50%;
+    }
 }
