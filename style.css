@@ -312,6 +312,8 @@ footer a:hover {
     padding: 0px;
     padding-bottom: 0px;
     border-radius: 0px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .gameCard img {

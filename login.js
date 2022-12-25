@@ -29,11 +29,12 @@ document.getElementById('form').addEventListener('submit', function (event) {
     document.getElementById('form').submit();
     alert('Form submitted');
     console.log('Form submitted');
-    window.location.href = '/';
+    return window.location.href = '/';
 });
 
 function register() {
-    return window.location.href = '/register.html';
+    alert('Registered successfully.');
+    return window.location.href = '/';
 }
 
 function checkForPreset() {
