@@ -418,6 +418,7 @@ footer a:hover {
     .nav {
         overflow: hidden !important;
         white-space: nowrap !important;
+        padding-top: 10px !important;
     }
 }
 
