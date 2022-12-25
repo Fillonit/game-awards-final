@@ -385,9 +385,9 @@ footer a:hover {
         width: 50px;
     }
 
-    /* .nav {
-        display: none !important;
-    } */
+    .nav a {
+        font-size: 12px !important;
+    }
 
     .gameCard {
         overflow: hidden;
