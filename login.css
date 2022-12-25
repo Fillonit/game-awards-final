@@ -16,7 +16,7 @@
 
 .container {
     width: 450px;
-    height: 455px;
+    height: 475px;
 }
 
 .container * {
@@ -51,8 +51,8 @@
 .container .content .logo {
     background-image: url('./assets/img/noctlogo1.png');
     background-size: cover;
-    width: 300px;
-    height: 90px;
+    width: 270px;
+    height: 80px;
     margin: 50px auto;
 }
 

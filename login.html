@@ -39,17 +39,19 @@
         </div>
         <div class="content">
             <div class="logo"></div>
-            <form class="form" id="form">
-                <input class="textfield" type="text" name="username" placeholder="Username" onfocus="inputFocus()" />
-                <input class="textfield" type="password" name="password" placeholder="Password"
-                    onfocus="inputFocus()" />
+            <form class="form" id="form" onsubmit="return formSubmitted();">
+                <input class="textfield" type="text" name="username" placeholder="Username" onfocus="inputFocus()"
+                    id="username" />
+                <input class="textfield" type="password" name="password" placeholder="Password" onfocus="inputFocus()"
+                    id="password" />
                 <p id="error"></p>
                 <div class="button-group">
                     <button class="btn login">Login</button>
-                    <button class="btn">Cancel</button>
-                </div><a class="forgot-password" href="#">Forgotten your password?</a>
+                    <button class="btn" onclick="exitLogin()">Cancel</button>
+                </div><a class="forgot-password" href="?method=forgotPassword">Forgotten your password?</a>
                 <hr class="separator" />
-                <button class="btn">Create Account</button>
+                <a class="forgot-password" href="?method=register"><button class="btn"
+                        onclick="return register();">Create Account</button></a>
             </form>
         </div>
     </div>

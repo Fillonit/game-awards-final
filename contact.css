@@ -6,8 +6,8 @@
 }
 
 body {
-    /* background-color: #282a2c; */
-    background: linear-gradient(to top, #434547, #282a2c, #1C1D1F, #151617);
+    background-color: #2D323B;
+    /* background: linear-gradient(to top, #434547, #282a2c, #1C1D1F, #151617); */
     background-repeat: no-repeat;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -28,16 +28,17 @@ body {
 
 .LoginBtn {
     border: none;
-    padding: 7px;
+    padding: 0px;
     /* margin-top: 15px; */
     background-color: #11f285;
     color: white;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 0px;
     vertical-align: middle;
     height: 35px;
     width: 100px;
+    text-align: center;
 }
 
 .nav {

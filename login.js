@@ -26,5 +26,28 @@ document.getElementById('form').addEventListener('submit', function (event) {
         }
     }
     //testing
+    document.getElementById('form').submit();
+    alert('Form submitted');
     console.log('Form submitted');
+    window.location.href = '/';
 });
+
+function register() {
+    return window.location.href = '/register.html';
+}
+
+function checkForPreset() {
+    const urlParams = new URLSearchParams(window.location.search);
+    let username = urlParams.get('username');
+    let password = urlParams.get('password');
+    updateValues(username, password);
+}
+
+function updateValues(username, password) {
+
+    document.getElementById('username').value = username;
+    document.getElementById('password').value = password;
+
+}
+
+window.onload(checkForPreset());
