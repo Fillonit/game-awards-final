@@ -382,7 +382,7 @@ footer a:hover {
     }
 
     .LoginBtn {
-        width: 50px;
+        width: 40px;
     }
 
     .nav a {
@@ -394,18 +394,19 @@ footer a:hover {
     .gameCard {
         overflow: hidden;
         white-space: nowrap;
+        width: 150px;
     }
 
     .gameCard h1 {
-        font-size: 0.7em !important;
+        font-size: 0.8em !important;
     }
 
     .gameRating {
-        font-size: 0.6em !important;
+        font-size: 0.8em !important;
     }
 
     .gameButton {
-        font-size: 0.5em !important;
+        font-size: 0.7em !important;
     }
 
     footer {
