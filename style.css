@@ -433,6 +433,12 @@ footer a:hover {
         font-size: 10px;
     }
 
+    .nav a {
+        font-size: 16px !important;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
     .gameCard {
         overflow: hidden;
         white-space: nowrap;
@@ -456,7 +462,7 @@ footer a:hover {
     }
 
     .nav {
-        overflow: scroll !important;
+        overflow: hidden !important;
         white-space: nowrap !important;
     }
 }
