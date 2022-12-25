@@ -50,4 +50,4 @@ function updateValues(username, password) {
 
 }
 
-window.onload(checkForPreset());
+window.onload = checkForPreset();

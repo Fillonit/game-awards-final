@@ -115,3 +115,33 @@ form {
     vertical-align: center;
     margin-top: 25vh;
 }
+
+textarea,
+input,
+button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    form {
+        width: 80vw;
+    }
+
+    .LoginBtn span {
+        display: none;
+    }
+
+    .LoginBtn:before {
+        content: '';
+        display: none;
+    }
+
+    .LoginBtn {
+        width: 40px;
+    }
+
+    .LoginBtn i {
+        text-align: center;
+        padding-top: 2px;
+    }
+}
