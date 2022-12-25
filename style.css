@@ -387,6 +387,8 @@ footer a:hover {
 
     .nav a {
         font-size: 12px !important;
+        padding-left: 3px;
+        padding-right: 3px;
     }
 
     .gameCard {
