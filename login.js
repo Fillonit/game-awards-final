@@ -25,8 +25,7 @@ document.getElementById('form').addEventListener('submit', function (event) {
             return;
         }
     }
-    //testing
-    document.getElementById('form').submit();
+    // document.getElementById('form').submit();
     alert('Form submitted');
     console.log('Form submitted');
     return window.location.href = '/';
