@@ -373,6 +373,18 @@ footer a:hover {
         font-size: 10px;
     }
 
+    .LoginBtn span {
+        display: none;
+    }
+
+    .LoginBtn:before {
+        content: '';
+    }
+
+    .LoginBtn {
+        width: 50px;
+    }
+
     /* .nav {
         display: none !important;
     } */
