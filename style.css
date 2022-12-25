@@ -156,7 +156,7 @@ button:hover {
 
 .slideshow-container img {
     aspect-ratio: 1/0.7;
-    object-fit: contain;
+    object-fit: fill;
 }
 
 /* Next & previous buttons */
@@ -358,4 +358,86 @@ footer a:hover {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #0eca6f;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+
+    .slideshow-container,
+    .slideshow-container img {
+        height: 100px !important;
+    }
+
+    .text {
+        font-size: 10px;
+    }
+
+    /* .nav {
+        display: none !important;
+    } */
+
+    .gameCard {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .gameCard h1 {
+        font-size: 0.7em !important;
+    }
+
+    .gameRating {
+        font-size: 0.6em !important;
+    }
+
+    .gameButton {
+        font-size: 0.5em !important;
+    }
+
+    footer {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .nav {
+        overflow: scroll !important;
+        white-space: nowrap !important;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+
+    .slideshow-container,
+    .slideshow-container img {
+        height: 200px !important;
+    }
+
+    .text {
+        font-size: 10px;
+    }
+
+    .gameCard {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .gameCard h1 {
+        font-size: 0.7em !important;
+    }
+
+    .gameRating {
+        font-size: 0.6em !important;
+    }
+
+    .gameButton {
+        font-size: 0.5em !important;
+    }
+
+    footer {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .nav {
+        overflow: scroll !important;
+        white-space: nowrap !important;
+    }
 }
