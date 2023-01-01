@@ -1,11 +1,5 @@
-/* 
-    Quick and dirty inserting div's with different images.
-    Faster dan manually adding divs + css nth-child(x) with bg images.
-*/
 (function () {
     const steamCards = document.querySelector('.js-steamCards');
-
-    // Create array with images
     const listImages = [
         "https://i.postimg.cc/C5NMN512/steam-card-2.jpg",
         "https://i.postimg.cc/prxXzz28/steam-card-1.jpg",
@@ -29,9 +23,15 @@
     ];
 
     let imagesTotal = listImages.length ? listImages.length : 0;
-
-    // Loop through array and create cards with different images.
     for (let i = 0; i < imagesTotal; i++) {
         steamCards.insertAdjacentHTML('beforeend', `<div class="d-steam-card-wrapper"><div class="d-steam-card js-steamCard" style="background-image: url('${listImages[i]}')"></div></div>`);
     }
 })();
+
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    if (key === 'Home' || key === 'Escape' || key === 'End') {
+        // window.location.replace('/');
+        window.location.href = '/';
+    }
+});
