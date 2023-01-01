@@ -32,6 +32,18 @@ document.getElementById('form').addEventListener('submit', function (event) {
 });
 
 function register() {
+    let inputs = document.querySelectorAll('input');
+
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].value == '' || inputs[i].value == null || inputs[i].value == undefined || inputs[i].value.length < 3) {
+            document.getElementById('error').classList.add('error');
+            document.getElementById('error').innerText = 'Please fill out all the fields properly.';
+            console.log('Not all fields have been filled.')
+            return;
+        }
+    }
+    // document.getElementById('form').submit();
+    console.log('Form submitted');
     alert('Registered successfully.');
     return window.location.href = '/';
 }
