@@ -156,7 +156,7 @@ button:hover {
 
 .slideshow-container img {
     aspect-ratio: 1/0.7;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 /* Next & previous buttons */
