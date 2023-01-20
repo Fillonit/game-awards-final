@@ -116,10 +116,14 @@ form {
     margin-top: 25vh;
 }
 
-textarea,
+/* textarea,
 input,
 button {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} */
+
+.LoginBtn i {
+    vertical-align: middle;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 600px) {
