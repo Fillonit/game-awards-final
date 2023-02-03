@@ -17,3 +17,27 @@
 //     gameRating.style.display = 'none';
 //     gameButton.style.display = 'none';
 // });
+
+let LoginBtn = document.getElementById('LoginBtn');
+window.onload = function () {
+
+    let userData = localStorage.getItem('user');
+    if (userData) {
+        let user = JSON.parse(userData);
+        console.log(user);
+        LoginBtn.innerText = user.username;
+        LoginBtn.setAttribute('title', 'Log Out');
+    } else {
+        console.log("No data found in local storage for the user")
+        LoginBtn.setAttribute('title', 'Log In');
+    }
+}
+
+LoginBtn.onclick = function () {
+    if (localStorage.getItem('user')) {
+        localStorage.removeItem('user');
+    } else {
+        console.log("No data found in local storage for the key user")
+    }
+
+}
