@@ -34,7 +34,7 @@ document.getElementById('form').addEventListener('submit', async function (event
 
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:3000/login.php', true);
+    xhr.open('POST', '/api/login.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 

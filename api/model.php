@@ -91,7 +91,7 @@
                     $data = $row;
                 }
             }
-            return $data;
+            return echo_json($data);
         }
     }
 ?>
