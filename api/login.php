@@ -7,7 +7,5 @@
  
     if ($login) {
         echo json_encode($login);
-    } else {
-    echo "Incorrect username or password.";
     }
  ?>
