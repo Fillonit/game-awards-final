@@ -5,7 +5,9 @@
     $password = $_POST['password'];
     $login = $model->login($username, $password);
  
-    if (!$login) {
-        echo "Incorrect username or password."
+    if ($login) {
+        echo_json($login);
+    } else {
+    echo "Incorrect username or password.";
     }
  ?>
