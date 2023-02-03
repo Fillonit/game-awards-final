@@ -85,7 +85,7 @@
  
             $data = null;
  
-            $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password";
+            $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
             if ($sql = $this->conn->query($query)) {
                 while($row = $sql->fetch_assoc()){
                     $data = $row;
