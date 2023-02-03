@@ -6,7 +6,7 @@
     $login = $model->login($username, $password);
  
     if ($login) {
-        echo_json($login);
+        echo json_encode($login);
     } else {
     echo "Incorrect username or password.";
     }
