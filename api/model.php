@@ -81,7 +81,7 @@
             }
         }
 
-        public function login($username, $username){
+        public function login($username, $password){
  
             $data = null;
  
