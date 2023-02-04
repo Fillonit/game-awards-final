@@ -30,7 +30,7 @@ if(isset($_POST['submit'])) {
 
     <link rel="shortcut icon" href="assets/img/nocticon.png" type="image/x-icon">
     <link rel="stylesheet" href="../login.css">
-    <!-- <script src="../login.js" defer></script> -->
+    <script src="../login.js" defer></script>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <style>
