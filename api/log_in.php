@@ -1,9 +1,4 @@
 <?php
-// if (session_status() == PHP_SESSION_NONE) {
-//     session_start();
-// }
-
-
 include 'model.php';
 $model = new Model();
 
@@ -15,7 +10,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     if ($response == "Incorrect username or password.") {
         echo $response;
     } else {
-        $user_data = json_encode($response, true);
+        $user_data = json_decode($response, true);
         if (isset($user_data)) {
             session_start();
             $_SESSION["user_data"] = $user_data;
