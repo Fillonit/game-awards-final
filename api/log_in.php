@@ -20,6 +20,8 @@
             $_SESSION['username'] = $user['username'];
 
             header('location: dashboard.php');
+        }else{
+            $error = "Incorrect username or password";
         }
     }
 ?>
