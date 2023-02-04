@@ -2,16 +2,26 @@
 session_start();
 
 if(!isset($_SESSION['user'])) {
-    header("Location: login.php");
+    header("Location: log_in.php");
 }
 
 $user = $_SESSION['user'];
 
 if(!$user['is_admin']) {
-    header("Location: login.php");
+    header("Location: log_in.php");
 }
 
 ?>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <?=$user['username']?></h1>
+    <!-- Show the dashboard content here -->
+</body>
+</html>
+
 <!doctype html>
 <html lang="en">
   <head>
