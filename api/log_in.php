@@ -10,7 +10,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     if ($response == "Incorrect username or password.") {
         echo $response;
     } else {
-        $user_data = json_decode($response, true);
+        $user_data = json_decode($response);
         if (isset($user_data)) {
             session_start();
             $_SESSION["user_data"] = $user_data;
