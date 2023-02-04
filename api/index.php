@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['user'])) {
+    header("Location: login.php");
+}
+
+$user = $_SESSION['user'];
+
+if(!$user['is_admin']) {
+    header("Location: login.php");
+}
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
