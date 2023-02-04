@@ -19,7 +19,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
         if (isset($user_data)) {
             session_start();
             $_SESSION["user_data"] = $user_data;
-            header("Location: dashboard.php");
+            header("Location: index.php");
         } else {
             echo "Incorrect username or password.";
         }
