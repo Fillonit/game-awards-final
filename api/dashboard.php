@@ -1,9 +1,5 @@
 <?php 
 
-// start a session to store user data
-session_start();
-session_start();
-
 // Check if the user is logged in and has isAdmin = 1
 if (!isset($_SESSION['user']) || !isset($_SESSION['user']['isAdmin']) || $_SESSION['user']['isAdmin'] != 1) {
     header('Location: login.php');
