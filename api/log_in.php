@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'Model.php';
+include 'model.php';
 $model = new Model();
 
 if(isset($_POST['submit'])) {
