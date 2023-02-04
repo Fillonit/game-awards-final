@@ -7,18 +7,25 @@ if (session_status() == PHP_SESSION_NONE) {
 include 'model.php';
 $model = new Model();
 
-if(isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+if (isset($_POST["username"]) && isset($_POST["password"])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-    $user = json_decode($model->login($username, $password), true);
-    
-    if(isset($user)) {
-        $_SESSION['user'] = $user;
-        header("Location: dashboard.php");
+    $response = $model->login($username, $password);
+    if ($response == "Incorrect username or password.") {
+        echo $response;
     } else {
-        echo "Incorrect username or password.";
+        $user_data = json_decode($response, true);
+        if (isset($user_data)) {
+            session_start();
+            $_SESSION["user_data"] = $user_data;
+            header("Location: dashboard.php");
+        } else {
+            echo "Incorrect username or password.";
+        }
     }
+} else {
+    echo "Please enter a username and password.";
 }
 
 ?>
