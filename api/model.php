@@ -94,7 +94,7 @@
             if($data != null) {
             echo json_encode($data);
             } else {
-                echo "Incorrect username or password.";
+                echo json_encode($data);
             }
         }
     }
