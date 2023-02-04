@@ -16,7 +16,7 @@
         $user = $data;
 
         if(isset($user) && !empty($user)){
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['isAdmin'] = $user['isAdmin'];
             $_SESSION['username'] = $user['username'];
 
             header('location: dashboard.php');
