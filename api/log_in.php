@@ -1,38 +1,27 @@
 <?php
-include 'model.php';
-$model = new Model();
 
-if (isset($_POST["username"]) && isset($_POST["password"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+require_once 'model.php';
 
-    $response = $model->login($username, $password);
-    if ($response == "Incorrect username or password.") {
-        echo $response;
-    } else {
-        $user_data = json_decode($response);
-        if (isset($user_data)) {
-            session_start();
-            $_SESSION["user_data"] = $user_data;
-            header("Location: index.php");
-        } else {
-            echo "Incorrect username or password.";
-        }
-    }
-} else {
-    echo "Please enter a username and password.";
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $model = new Model();
+    $model->login($username, $password);
 }
 
 ?>
+
+<!DOCTYPE html>
 <html>
 <head>
     <title>Login</title>
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" name="submit" value="Login">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" name="submit" value="Submit">
     </form>
 </body>
 </html>
