@@ -1,10 +1,4 @@
 <?php
-
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
-
     class Model{
         private $server = 'db4free.net';
         private $username = 'adminnocturne';
