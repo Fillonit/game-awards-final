@@ -13,13 +13,14 @@
         $password = $_POST['password'];
 
         $data = $model->login($username, $password);
-        $user = json_decode($data, true);
         if (!empty($data)) {
             // Store the user data in the session
             $_SESSION['user'] = $data;
             // Redirect to the dashboard
             header('Location: dashboard.php');
             exit;
+        } else {
+        $user = json_decode($data, true)
         }
 
         if(isset($user) && !empty($user)){
