@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] = 1){
+    if(isset($_SESSION['user']['username']) && $_SESSION['user']['isAdmin'] = 1){
         header('location: dashboard.php');
     }
     
