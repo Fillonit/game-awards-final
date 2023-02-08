@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 
 if(!isset($_SESSION['user'])) {
@@ -11,7 +11,7 @@ if(!$user['is_admin']) {
     header("Location: log_in.php");
 }
 
-?>
+?> -->
 <html>
 <head>
     <title>Dashboard</title>
