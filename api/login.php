@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         function register() {
             // Add your code to run the insert method from model.php here
             document.getElementById("form").action = 'register.php';
-            document.getElementById("form").submit();
+            // document.getElementById("form").submit();
         }
     </script>
 </body>
