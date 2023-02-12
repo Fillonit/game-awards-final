@@ -9,5 +9,5 @@ unset($_SESSION['isAdmin']);
 session_destroy();
 
 // redirect to another page
-header('Location: log_in.php');
+header('Location: login.php');
 exit;

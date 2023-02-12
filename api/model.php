@@ -49,7 +49,7 @@
  
         public function delete($id){
  
-            $query = "DELETE FROM user_tbl where id = '$id'";
+            $query = "DELETE FROM users where id = '$id'";
             if ($sql = $this->conn->query($query)) {
                 return true;
             }else{
@@ -61,10 +61,11 @@
  
             $data = null;
  
-            $query = "SELECT * FROM user_tbl WHERE id = '$id'";
+            $query = "SELECT * FROM users WHERE id = '$id'";
             if ($sql = $this->conn->query($query)) {
                 while($row = $sql->fetch_assoc()){
                     $data = $row;
+                    echo "<script>alert('$data')</script>";
                 }
             }
             return $data;
@@ -72,7 +73,8 @@
  
         public function update($data){
  
-            $query = "UPDATE user_tbl SET name='$data[name]', email='$data[email]', mobile='$data[mobile]', address='$data[address]' WHERE id='$data[id] '";
+            $query = "UPDATE users SET id='$data[id]', username='$data[username]', password='$data[password]', isAdmin='$data[isAdmin]' WHERE id='$data[id]'";
+            echo "<script>alert('$query')</script>";
  
             if ($sql = $this->conn->query($query)) {
                 return true;
