@@ -104,4 +104,22 @@
             }
             return null;
         }
+
+        public function addUser(){
+            if(isset($_POST['submit'])){
+
+                $username = $_POST['username'];
+                $password = $_POST['password']; 
+                $isAdmin = $_POST['isAdmin']; 
+
+                $query = "INSERT INTO users(username, password, isAdmin) VALUES ('$username','$password', '$isAdmin')";
+                if ($sql = $this->conn->query($query)) {
+                    echo "<script>alert('records added successfully');</script>";
+                    echo "<script>window.location.href = 'dashboard.php';</script>";
+                }else{
+                    echo "<script>alert('failed');</script>";
+                    echo "<script>window.location.href = 'login.php';</script>";
+                }
+            }
+        }
     }

@@ -82,10 +82,10 @@ function wrongLogin() {
     return;
 }
 
-function register() {
-    alert('Registered successfully.');
-    return window.location.href = '/';
-}
+// function register() {
+//     alert('Registered successfully.');
+//     return window.location.href = '/';
+// }
 
 function checkForPreset() {
     const urlParams = new URLSearchParams(window.location.search);

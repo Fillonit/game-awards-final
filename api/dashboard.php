@@ -23,6 +23,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         body {
             background-color: #2D323B;
             margin-top: 80px;
+            font-family: 'Roboto Condensed', sans-serif;
         }
 
         /* Style for the header */
@@ -36,7 +37,7 @@ if ($_SESSION['isAdmin'] !== 1) {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto Condensed', sans-serif;
             z-index: 1;
             box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
         }
@@ -172,7 +173,7 @@ if ($_SESSION['isAdmin'] !== 1) {
 
     <!-- Table with user details -->
     <center>
-        <a href="add.php">
+        <a href="addUser.php">
             <button class="btn add-btn">
                 <i class="fa-solid fa-user-plus"></i>
                 Add a User
@@ -197,7 +198,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         ?>
                 <tr>
                     <td><?php echo $row['username']; ?></td>
-                    <td><input type="password" value="<?php echo $row['password']; ?>" onclick="togglePassword(event)" /></td>
+                    <td><input type="password" value="<?php echo $row['password']; ?>" onclick="togglePassword(event)" readonly/></td>
                     <td><?php echo $row['isAdmin']; ?></td>
                     <td>
                         <a href="edit.php?id=<?php echo $row['id']; ?>">
