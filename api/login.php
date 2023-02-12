@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $row = mysqli_fetch_array($result);
 
     if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_array($result);
         if ($row["isAdmin"] == 0) {
             $_SESSION["username"] = $username;
             $_SESSION["isAdmin"] = 0;
@@ -35,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("location:dashboard.php");
         }
     } else {
-        echo "Incorrect username or password";
+        echo "<script>alert('Incorrect username or password');</script>";
     }
     
 
@@ -102,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <button class="btn" onclick="exitLogin()">Cancel</button>
                 </div><a class="forgot-password" href="?method=forgotPassword">Forgotten your password?</a>
                 <hr class="separator" />
-                <a class="forgot-password" href="?method=register"><button class="btn" onclick="return register();" type="submit" name="submit">Create Account</button></a>
+                <a class="forgot-password" href="?method=register"><button class="btn" onclick="return register();" type="submit" name="btnSubmit">Create Account</button></a>
             </form>
         </div>
     </div>

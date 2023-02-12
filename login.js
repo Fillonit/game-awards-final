@@ -8,9 +8,6 @@ function inputFocus() {
     document.getElementById('error').classList.remove('error');
 }
 
-document.querySelector("input").addEventListener('focus', () => {
-    console.log("Entering password");
-});
 
 document.getElementById('form').addEventListener('submit', async function (event) {
     event.preventDefault();
@@ -33,50 +30,50 @@ document.getElementById('form').addEventListener('submit', async function (event
     const password = document.getElementById('password').value;
 
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/api/login.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('POST', '/api/login.php', true);
+    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 
-    xhr.onreadystatechange = async function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
+    // xhr.onreadystatechange = async function () {
+    //     if (xhr.readyState === 4 && xhr.status === 200) {
 
 
-            await localStorage.setItem('user', xhr.responseText);
+    //         await localStorage.setItem('user', xhr.responseText);
 
-            if (xhr.responseText.includes('Incorrect')) {
-                document.getElementById('error').classList.add('error');
-                document.getElementById('error').innerText = 'Incorrect username or password.';
-                await localStorage.removeItem('user');
-                return;
-            } else {
-                localStorage.setItem('user', xhr.responseText);
-                console.log('All good.');
-            }
-        }
-    }
+    //         if (xhr.responseText.includes('Incorrect')) {
+    //             document.getElementById('error').classList.add('error');
+    //             document.getElementById('error').innerText = 'Incorrect username or password.';
+    //             await localStorage.removeItem('user');
+    //             return;
+    //         } else {
+    //             localStorage.setItem('user', xhr.responseText);
+    //             console.log('All good.');
+    //         }
+    //     }
+    // }
 
 
-    await xhr.send(`username=${username}&password=${password}`);
+    // await xhr.send(`username=${username}&password=${password}`);
 
-    if (!localStorage.getItem('user')) return await xhr.send(`username=${username}&password=${password}`);
+    // if (!localStorage.getItem('user')) return await xhr.send(`username=${username}&password=${password}`);
 
-    if (localStorage.getItem('user').includes('Incorrect')) {
+    // if (localStorage.getItem('user').includes('Incorrect')) {
 
-        document.getElementById('error').classList.add('error');
-        document.getElementById('error').innerText = 'Incorrect username or password.';
+    //     document.getElementById('error').classList.add('error');
+    //     document.getElementById('error').innerText = 'Incorrect username or password.';
 
-        await localStorage.removeItem('user');
+    //     await localStorage.removeItem('user');
 
-        return;
-    } else {
-        console.log('All good...')
-    }
+    //     return;
+    // } else {
+    //     console.log('All good...')
+    // }
 
-    await setTimeout(() => {
-        alert('Form submitted');
-        // window.location.href = '/';
-    }, 1);
+    // await setTimeout(() => {
+    //     alert('Form submitted');
+    //     // window.location.href = '/';
+    // }, 1);
 });
 
 function wrongLogin() {
