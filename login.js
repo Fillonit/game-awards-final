@@ -34,7 +34,7 @@ document.getElementById('form').addEventListener('submit', async function (event
 
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/api/login.php', true);
+    xhr.open('POST', '/api/log_in.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 
@@ -75,7 +75,7 @@ document.getElementById('form').addEventListener('submit', async function (event
 
     await setTimeout(() => {
         alert('Form submitted');
-        window.location.href = '/';
+        // window.location.href = '/';
     }, 1);
 });
 

@@ -38,7 +38,7 @@
         
         public function fetch(){
             $data = null;
-            $query = "SELECT * FROM user_tbl";
+            $query = "SELECT * FROM users";
             if ($sql = $this->conn->query($query)) {
                 while ($row = mysqli_fetch_assoc($sql)) {
                     $data[] = $row;
@@ -92,9 +92,9 @@
                 }
             }
             if($data != null) {
-            echo json_encode($data);
+            return(json_encode($data));
             } else {
-                echo `Incorrect username or password.`;
+                return `Incorrect username or password.`;
             }
         }
 
@@ -107,4 +107,3 @@
             return null;
         }
     }
-?>

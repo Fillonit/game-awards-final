@@ -6,6 +6,6 @@
     $login = $model->login($username, $password);
  
     if ($login) {
-        echo json_encode($login);
+        echo ($login);
     }
  ?>
