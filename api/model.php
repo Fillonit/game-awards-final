@@ -1,9 +1,9 @@
 <?php
     class Model{
-        private $server = 'db4free.net';
-        private $username = 'adminnocturne';
-        private $password = '!es27MiQfAaWb_k';
-        private $database = 'gamingawards';
+        private $server = 'localhost';
+        private $username = 'root';
+        private $password = '';
+        private $database = 'gameawards';
         private $conn;
 
         public function __construct(){
@@ -19,12 +19,10 @@
         public function insert(){
             if(isset($_POST['submit'])){
 
-                $name = $_POST['name'];//blerina
-                $email = $_POST['email']; //blerina@ubt
-                $mobile = $_POST['mobile'];
-                $address = $_POST['address'];
+                $username = $_POST['username'];//blerina
+                $password = $_POST['password']; //blerina@ubt
 
-                $query = "INSERT INTO user_tbl(name, email, mobile, address) VALUES ('$name','$email', '$mobile', '$address')";
+                $query = "INSERT INTO users(username, password) VALUES ('$username','$password')";
                 if ($sql = $this->conn->query($query)) {
                     echo "<script>alert('records added successfully');</script>";
                     echo "<script>window.location.href = 'index.php';</script>";
@@ -65,7 +63,6 @@
             if ($sql = $this->conn->query($query)) {
                 while($row = $sql->fetch_assoc()){
                     $data = $row;
-                    echo "<script>alert('$data')</script>";
                 }
             }
             return $data;
@@ -73,8 +70,7 @@
  
         public function update($data){
  
-            $query = "UPDATE users SET id='$data[id]', username='$data[username]', password='$data[password]', isAdmin='$data[isAdmin]' WHERE id='$data[id]'";
-            echo "<script>alert('$query')</script>";
+            $query = "UPDATE users SET id='$data[id]', username='$data[username]', password='$data[password]', isAdmin='$data[isAdmin]' WHERE users.id='$data[id]'";
  
             if ($sql = $this->conn->query($query)) {
                 return true;

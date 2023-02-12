@@ -51,6 +51,136 @@
       .form-control {
           border-radius: 0px;
       }
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+        body {
+            background-color: #2D323B;
+            margin-top: 10px;
+            text-align: center;
+            color: white;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 18px;
+        }
+
+        /* Style for the header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #1C1D1F;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            z-index: 1;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h2,
+        header p {
+            margin: 0;
+            color: white;
+        }
+
+        th,
+        td {
+            border: 1px solid lightgray;
+            padding: 10px 15px;
+            text-align: left;
+            background-color: white;
+        }
+
+        th {
+            background-color: lightgray;
+            font-weight: bold;
+        }
+
+        /* Style for the buttons */
+        .btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            outline: none;
+            padding: 0;
+            border-radius: 0px;
+        }
+
+        .edit-btn {
+            background-color: #0eca6f;
+            color: white;
+            padding: 6px 10px;
+        }
+
+        .delete-btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 6px 10px;
+        }
+
+        .add-btn {
+            background-color: #1C1D1F;
+            color: white;
+            padding: 10px 14px;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        table th:last-child,
+        table td:last-child {
+            width: 100px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        table th {
+            background-color: #0eca6f;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: #333;
+            color: #fff;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        table,
+        table th,
+        table td {
+            border: none;
+        }
+
+        table th tr:nth-child(even) {
+            background-color: #333;
+        }
+
+        table th tr:nth-child(odd) {
+            background-color: #444;
+        }
+
+        table td {
+            background-color: #1C1D1F;
+        }
+
+        p a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+        input {
+    border: 2px solid white;
+    padding: 5px;
+    margin: 3px;
+}
+
     </style>
  </head>
  <body>
@@ -70,7 +200,7 @@
               $row = $model->edit($id);
  
               if (isset($_POST['update'])) {
-                if (isset($_POST['username']) && isset($_POST['passord']) && isset($_POST['isAdmin'])) {
+                if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['isAdmin'])) {
                      
                     $data['id'] = $id;
                     $data['username'] = $_POST['username'];
@@ -81,10 +211,10 @@
  
                     if($update){
                       echo "<script>alert('record update successfully');</script>";
-                      echo "<script>window.location.href = 'index.php';</script>";
+                      echo "<script>window.location.href = 'dashboard.php';</script>";
                     }else{
                       echo "<script>alert('record update failed');</script>";
-                      echo "<script>window.location.href = 'index.php';</script>";
+                      echo "<script>window.location.href = 'dashboard.php';</script>";
                     }
  
                   }else{
@@ -96,18 +226,18 @@
           <form action="" method="post">
             <div class="form-group">
               <label for="">Username</label>
-              <input type="text" name="username" value="<?php echo $row['username']; ?>" class="form-control">
+              <input type="text" name="username" value="<?php echo $row['username']; ?>" class="form-control" autocomplete="off">
             </div>
             <div class="form-group">
               <label for="">Password</label>
-              <input type="password" name="password" value="<?php echo $row['password']; ?>" class="form-control">
+              <input type="text" name="password" value="<?php echo $row['password']; ?>" class="form-control" autocomplete="off">
             </div>
             <div class="form-group">
               <label for="">isAdmin?</label>
-              <input type="text" name="isAdmin" value="<?php echo $row['isAdmin']; ?>" class="form-control">
+              <input type="text" name="isAdmin" value="<?php echo $row['isAdmin']; ?>" class="form-control" autocomplete="off">
             </div>
             <div class="form-group">
-              <button type="submit" name="update" class="btn btn-primary">Submit</button>
+              <button type="submit" name="update" class="btn add-btn">Submit</button>
             </div>
           </form>
         </div>

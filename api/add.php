@@ -74,11 +74,11 @@
           <form action="" method="post">
             <div class="form-group">
               <label for="">Name</label>
-              <input type="text" name="name" class="form-control">
+              <input type="text" name="username" class="form-control">
             </div>
             <div class="form-group">
-              <label for="">Email</label>
-              <input type="email" name="email" class="form-control">
+              <label for="">password</label>
+              <input type="text" name="password" class="form-control">
             </div>
             <div class="form-group">
               <label for="">Mobile No.</label>

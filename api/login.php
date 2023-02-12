@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-$server = 'db4free.net';
-$username = 'adminnocturne';
-$password = '!es27MiQfAaWb_k';
-$database = 'gamingawards';
+$server = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'gameawards';
+$conn;
 $data = mysqli_connect($server, $username, $password, $database);
 
 if ($data === false) {
