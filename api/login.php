@@ -23,16 +23,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $row = mysqli_fetch_array($result);
 
-
-    if ($row["isAdmin"] == 0) {
-        $_SESSION["username"] = $username;
-        $_SESSION["isAdmin"] = 0;
-        echo "<script>window.location.href = '/';</script>";
-    } elseif ($row["isAdmin"] == 1) {
-        $_SESSION["username"] = $username;
-        $_SESSION["isAdmin"] = 1;
-        header("location:dashboard.php");
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_array($result);
+        if ($row["isAdmin"] == 0) {
+            $_SESSION["username"] = $username;
+            $_SESSION["isAdmin"] = 0;
+            echo "<script>window.location.href = '/';</script>";
+        } elseif ($row["isAdmin"] == 1) {
+            $_SESSION["username"] = $username;
+            $_SESSION["isAdmin"] = 1;
+            header("location:dashboard.php");
+        }
+    } else {
+        echo "Incorrect username or password";
     }
+    
+
+
+    // if ($row["isAdmin"] == 0) {
+    //     $_SESSION["username"] = $username;
+    //     $_SESSION["isAdmin"] = 0;
+    //     echo "<script>window.location.href = '/';</script>";
+    // } elseif ($row["isAdmin"] == 1) {
+    //     $_SESSION["username"] = $username;
+    //     $_SESSION["isAdmin"] = 1;
+    //     header("location:dashboard.php");
+    // }
 }
 
 ?>
@@ -47,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <link rel="shortcut icon" href="../assets/img/nocticon.png" type="image/x-icon">
     <link rel="stylesheet" href="../login.css">
-    <!-- <script src="../login.js" defer></script> -->
+    <script src="../login.js" defer></script>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     <style>
@@ -77,10 +93,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         <div class="content">
             <div class="logo"></div>
-            <?php
-            include 'model.php';
-            $model = new Model();
-            ?>
             <form class="form" id="form" method='POST' action="login.php">
                 <input class="textfield" type="text" name="username" placeholder="Username" onfocus="inputFocus()" id="username" />
                 <input class="textfield" type="password" name="password" placeholder="Password" onfocus="inputFocus()" id="password" />
@@ -90,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <button class="btn" onclick="exitLogin()">Cancel</button>
                 </div><a class="forgot-password" href="?method=forgotPassword">Forgotten your password?</a>
                 <hr class="separator" />
-                <a class="forgot-password" href="?method=register"><button class="btn" onclick="register();" type="submit">Create Account</button></a>
+                <a class="forgot-password" href="?method=register"><button class="btn" onclick="return register();" type="submit" name="submit">Create Account</button></a>
             </form>
         </div>
     </div>
@@ -101,10 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         function register() {
             // Add your code to run the insert method from model.php here
-            <?php
-            $insert = $model->insert();
-            ?>
-            // document.getElementById("form").submit();
+            document.getElementById("form").action = 'register.php';
+            document.getElementById("form").submit();
         }
     </script>
 </body>
