@@ -108,6 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
     <script>
         function submitForm() {
+            document.getElementById("form").action = 'login.php';
             document.getElementById("form").submit();
         }
 
