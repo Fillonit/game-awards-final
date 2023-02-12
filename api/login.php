@@ -12,6 +12,7 @@ if ($data === false) {
     die("connection error");
 }
 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -24,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     if ($row["isAdmin"] == 0) {
-
         $_SESSION["username"] = $username;
         $_SESSION["isAdmin"] = 0;
         echo "<script>window.location.href = '/';</script>";
@@ -77,19 +77,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         <div class="content">
             <div class="logo"></div>
-            <form class="form" id="form" method='POST' action="log_in.php">
+            <?php
+            include 'model.php';
+            $model = new Model();
+            ?>
+            <form class="form" id="form" method='POST' action="login.php">
                 <input class="textfield" type="text" name="username" placeholder="Username" onfocus="inputFocus()" id="username" />
                 <input class="textfield" type="password" name="password" placeholder="Password" onfocus="inputFocus()" id="password" />
                 <p id="error"></p>
                 <div class="button-group">
-                    <button class="btn login">Login</button>
+                    <button class="btn login" onclick="submitForm();">Login</button>
                     <button class="btn" onclick="exitLogin()">Cancel</button>
                 </div><a class="forgot-password" href="?method=forgotPassword">Forgotten your password?</a>
                 <hr class="separator" />
-                <a class="forgot-password" href="?method=register"><button class="btn" onclick="return register();">Create Account</button></a>
+                <a class="forgot-password" href="?method=register"><button class="btn" onclick="register();" type="submit">Create Account</button></a>
             </form>
         </div>
     </div>
+    <script>
+        function submitForm() {
+            document.getElementById("form").submit();
+        }
+
+        function register() {
+            // Add your code to run the insert method from model.php here
+            <?php
+            $insert = $model->insert();
+            ?>
+            // document.getElementById("form").submit();
+        }
+    </script>
 </body>
 
 </html>

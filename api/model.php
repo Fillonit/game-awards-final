@@ -25,10 +25,10 @@
                 $query = "INSERT INTO users(username, password) VALUES ('$username','$password')";
                 if ($sql = $this->conn->query($query)) {
                     echo "<script>alert('records added successfully');</script>";
-                    echo "<script>window.location.href = 'index.php';</script>";
+                    echo "<script>window.location.href = '/';</script>";
                 }else{
                     echo "<script>alert('failed');</script>";
-                    echo "<script>window.location.href = 'index.php';</script>";
+                    echo "<script>window.location.href = 'login.php';</script>";
                 }
             }
         }
