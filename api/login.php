@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "<script>alert('Incorrect username or password');</script>";
         // echo "<script>alert('Incorrect username or password');</script>";
     }
-    
+
 
 
     // if ($row["isAdmin"] == 0) {
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <button class="btn" onclick="exitLogin()">Cancel</button>
                 </div><a class="forgot-password" href="?method=forgotPassword">Forgotten your password?</a>
                 <hr class="separator" />
-                <a class="forgot-password" href="?method=register"><button class="btn" onclick="return register();" type="submit" name="btnSubmit">Create Account</button></a>
+                <a class="forgot-password" href="?method=register"><button class="btn" onclick="return register();" type="submit" name="Submit">Create Account</button></a>
             </form>
         </div>
     </div>
@@ -113,9 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         function register() {
-            // Add your code to run the insert method from model.php here
             document.getElementById("form").action = 'register.php';
-            // document.getElementById("form").submit();
+            document.getElementById("form").submit();
         }
     </script>
 </body>

@@ -26,12 +26,12 @@ document.getElementById('form').addEventListener('submit', async function (event
     console.log('Form submitted');
 
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    // const username = document.getElementById('username').value;
+    // const password = document.getElementById('password').value;
 
 
     // const xhr = new XMLHttpRequest();
-    // xhr.open('POST', '/api/login.php', true);
+    // xhr.open('POST', 'register.php', true);
     // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 
