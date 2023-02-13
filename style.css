@@ -466,3 +466,16 @@ footer a:hover {
         white-space: nowrap !important;
     }
 }
+
+footer {
+    background-color: #1C1D1F;
+}
+
+.gameButton {
+    background-color: #0eca6f
+}
+
+.gameButton {
+    font-weight: bold;
+    font-size: 18px;
+}
