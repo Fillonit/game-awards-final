@@ -1,0 +1,85 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px;
+}
+
+.game-info {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.game-info span {
+    color: #0eca6f;
+}
+
+main .screenshots img {
+    max-width: 25vw;
+}
+
+main .screenshots {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+main .screenshots img {
+    padding: 10px
+}
+
+video {
+    width: 70%;
+    border-radius: 5px;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background-image: url("https://cdn.akamai.steamstatic.com/steam/apps/271590/page_bg_generated_v6b.jpg?t=1671485100");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    /*   padding: 100px; */
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-image {
+    display: flex;
+    justify-content: center;
+}
+
+.game-image img {
+    max-width: 100%;
+}
+
+.game-container {
+    padding-left: 200px;
+    padding-bottom: 50px
+}
+
+.game-info {
+    padding-left: 50px;
+}
