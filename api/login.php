@@ -37,18 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "<script>alert('Incorrect username or password');</script>";
         // echo "<script>alert('Incorrect username or password');</script>";
     }
-
-
-
-    // if ($row["isAdmin"] == 0) {
-    //     $_SESSION["username"] = $username;
-    //     $_SESSION["isAdmin"] = 0;
-    //     echo "<script>window.location.href = '/';</script>";
-    // } elseif ($row["isAdmin"] == 1) {
-    //     $_SESSION["username"] = $username;
-    //     $_SESSION["isAdmin"] = 1;
-    //     header("location:dashboard.php");
-    // }
 }
 
 ?>
