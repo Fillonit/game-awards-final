@@ -20,16 +20,16 @@
     <div class="header">
         <!-- <img src="" alt="" class="logo"> -->
         <!-- <a href="/" class="logo"><h1 class="logo">Nocturne</h1></a> -->
-        <a href="/" class="logo"><img src="./assets/img/noctlogo1.png" alt="Nocturne"></a>
+        <a href="/" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
         <div class="nav">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
-            <a href="/games.html">Games</a>
+            <a href="/api/pages/index.php">Home</a>
+            <a href="/api/pages/about.php">About</a>
+            <a href="/api/pages/contact.php">Contact</a>
+            <a href="/api/pages/games.php">Games</a>
+            <a href="/api/admin/dashboard.php" id="dashboardURL">Dashboard</a>
         </div>
 
-        <a href="/login.html"><button class="LoginBtn"><span>Login </span><i
-                    class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
+        <a href="/api/user/login.php"><button class="LoginBtn" id="LoginBtn"><span id="loggedInUser">Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
     </div>
 
     <body>

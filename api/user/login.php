@@ -49,28 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noctus - Game Reviews & Awards</title>
 
-    <link rel="shortcut icon" href="../assets/img/nocticon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../login.css">
-    <script src="../login.js" defer></script>
+    <link rel="shortcut icon" href="../../assets/img/nocticon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/login.css">
+    <script src="../../assets/js/login.js" defer></script>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-    <style>
-        body {
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-
-            background-color: #131313;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 20px;
-        }
-    </style>
 </head>
 
 <body>

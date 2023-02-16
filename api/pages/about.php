@@ -12,22 +12,22 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link rel="stylesheet" href="contact.css"> -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
 <body>
     <div class="header">
         <!-- <img src="" alt="" class="logo"> -->
-        <a href="/" class="logo"><img src="./assets/img/noctlogo1.png" alt="Nocturne"></a>
+        <a href="/" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
         <div class="nav">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
-            <a href="/games.html">Games</a>
+            <a href="/api/pages/index.php">Home</a>
+            <a href="/api/pages/about.php">About</a>
+            <a href="/api/pages/contact.php">Contact</a>
+            <a href="/api/pages/games.php">Games</a>
+            <a href="/api/admin/dashboard.php" id="dashboardURL">Dashboard</a>
         </div>
 
-        <a href="/login.html"><button class="LoginBtn">Login <i
-                    class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
+        <a href="/api/user/login.php"><button class="LoginBtn" id="LoginBtn"><span id="loggedInUser">Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
     </div>
     <style>
         /* Add some fancy styling to the page */

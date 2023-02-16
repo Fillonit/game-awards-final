@@ -17,140 +17,7 @@ if ($_SESSION['isAdmin'] !== 1) {
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous"> -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
-
-        body {
-            background-color: #2D323B;
-            margin-top: 80px;
-            font-family: 'Roboto Condensed', sans-serif;
-        }
-
-        /* Style for the header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: #1C1D1F;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Roboto Condensed', sans-serif;
-            z-index: 1;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header h2,
-        header p {
-            margin: 0;
-            color: white;
-        }
-
-        th,
-        td {
-            border: 1px solid lightgray;
-            padding: 10px 15px;
-            text-align: left;
-            background-color: white;
-        }
-
-        th {
-            background-color: lightgray;
-            font-weight: bold;
-        }
-
-        /* Style for the buttons */
-        .btn {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            outline: none;
-            padding: 0;
-            border-radius: 0px;
-        }
-
-        .edit-btn {
-            background-color: #0eca6f;
-            color: white;
-            padding: 6px 10px;
-        }
-
-        .delete-btn {
-            background-color: #e74c3c;
-            color: white;
-            padding: 6px 10px;
-        }
-
-        .add-btn {
-            background-color: #1C1D1F;
-            color: white;
-            padding: 10px 14px;
-            font-size: 20px;
-        }
-
-
-        /* .edit-btn i,
-        .delete-btn i {
-            margin-right: 5px;
-        } */
-
-        table th:last-child,
-        table td:last-child {
-            width: 100px;
-            text-align: center;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        table th {
-            background-color: #0eca6f;
-        }
-
-        table {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-            background-color: #333;
-            color: #fff;
-            font-family: 'Oswald', sans-serif;
-        }
-
-        table,
-        table th,
-        table td {
-            border: none;
-        }
-
-        table th tr:nth-child(even) {
-            background-color: #333;
-        }
-
-        table th tr:nth-child(odd) {
-            background-color: #444;
-        }
-
-        table td {
-            background-color: #1C1D1F;
-        }
-
-        p a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-        }
-
-        input {
-            background-color: transparent;
-            color: white;
-            border: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
     <script>
         function togglePassword(event) {
             let password = event.target;
@@ -189,7 +56,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         </tr>
         <?php
 
-        include 'model.php';
+        include '../../api/model/model.php';
         $model = new Model();
         $rows = $model->fetch();
         $i = 1;

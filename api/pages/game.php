@@ -35,9 +35,9 @@ session_start();
 
     <link rel="shortcut icon" href="assets/img/nocticon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../../gameDetail.css">
-    <script src="../../script.js" defer></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/gameDetail.css">
+    <script src="../../assets/js/script.js" defer></script>
 </head>
 
 <body>
@@ -46,10 +46,10 @@ session_start();
         <!-- <a href="/" class="logo"><h1 class="logo">Nocturne</h1></a> -->
         <a href="/" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
         <div class="nav">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
-            <a href="/games.html">Games</a>
+            <a href="/api/pages/index.php">Home</a>
+            <a href="/api/pages/about.php">About</a>
+            <a href="/api/pages/contact.php">Contact</a>
+            <a href="/api/pages/games.php">Games</a>
             <a href="/api/admin/dashboard.php" id="dashboardURL">Dashboard</a>
         </div>
 

@@ -1,5 +1,5 @@
 <?php 
-    include 'model.php';
+    include '../../api/model/model.php';
     $model = new Model();
     $id = $_REQUEST['id'];
     $delete = $model->delete($id);

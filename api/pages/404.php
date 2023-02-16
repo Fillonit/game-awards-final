@@ -8,7 +8,7 @@
     <title>Noctus - Game Reviews & Awards</title>
 
     <link rel="shortcut icon" href="assets/img/nocticon.png" type="image/x-icon">
-    <link rel="stylesheet" href="404.css">
+    <link rel="stylesheet" href="../../assets/css/404.css">
 </head>
 
 <body>
