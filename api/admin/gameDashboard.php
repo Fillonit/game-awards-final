@@ -52,40 +52,42 @@ if ($_SESSION['isAdmin'] !== 1) {
                 Add a Game
             </button>
         </a>
-        <a href="gameDashboard.php">
+        <a href="dashboard.php">
             <button class="btn add-btn">
-            <i class="fa-solid fa-dungeon"></i>
-                Games Dashboard
+            <i class="fa-solid fa-users"></i>
+                Users Dashboard
             </button>
         </a>
     </center>
     <table>
         <tr>
-            <th>Username</th>
-            <th>Password</th>
-            <th>isAdmin?</th>
+            <th>Title</th>
+            <th>Rating</th>
+            <th>ImageURL</th>
+            <th>Last Edited By</th>
             <th>Actions</th>
         </tr>
         <?php
 
         include '../../api/model/model.php';
         $model = new Model();
-        $rows = $model->fetch();
+        $rows = $model->fetchGames();
         $i = 1;
         if (!empty($rows)) {
             foreach ($rows as $row) {
         ?>
                 <tr>
-                    <td><?php echo $row['username']; ?></td>
-                    <td><input type="password" value="<?php echo $row['password']; ?>" onclick="togglePassword(event)" readonly/></td>
-                    <td><?php echo $row['isAdmin']; ?></td>
+                    <td><?php echo $row['gameTitle']; ?></td>
+                    <td><?php echo $row['gameRating']; ?></td>
+                    <td><?php echo $row['imageURL']; ?></td>
+                    <td><?php echo $row['lastEditBy']; ?></td>
                     <td>
-                        <a href="edit.php?id=<?php echo $row['id']; ?>">
+                        <a href="editGame.php?id=<?php echo $row['id']; ?>">
                             <button class="btn edit-btn">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
                         </a>
-                        <a href="delete.php?id=<?php echo $row['id']; ?>">
+                        <a href="deleteGame.php?id=<?php echo $row['id']; ?>">
                             <button class="btn delete-btn">
                                 <i class="fas fa-trash-alt"></i>
                             </button>

@@ -174,7 +174,7 @@ class Model
         }
     }
 
-    public function addGame()
+    public function addGame($username)
     {
         if (isset($_POST['submit'])) {
 
@@ -182,7 +182,7 @@ class Model
             $gameRating = $_POST['gameRating'];
             $imageURL = $_POST['imageURL'];
 
-            $query = "INSERT INTO games(gameTitle, gameRating, imageURL) VALUES ('$gameTitle','$gameRating', '$imageURL')";
+            $query = "INSERT INTO gamesList(gameTitle, gameRating, imageURL, lastEditBy) VALUES ('$gameTitle','$gameRating', '$imageURL', '$username')";
             if ($sql = $this->conn->query($query)) {
                 echo "<script>alert('records added successfully');</script>";
                 echo "<script>window.location.href = '/api/pages/index.php';</script>";
@@ -191,5 +191,17 @@ class Model
                 echo "<script>window.location.href = '/api/pages/dashboard.php';</script>";
             }
         }
+    }
+
+    public function fetchGames()
+    {
+        $data = null;
+        $query = "SELECT * FROM gamesList";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $data[] = $row;
+            }
+        }
+        return $data;
     }
 }

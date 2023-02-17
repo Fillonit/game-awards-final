@@ -24,7 +24,7 @@ if ($_SESSION['isAdmin'] !== 1) {
 <body>
     <!-- Header with website title on the left and username on the right -->
     <header>
-    <a href="/api/admin/dashboard.php"><h2>Nocturne</h2></a>
+    <a href="/api/admin/gameDashboard.php"><h2>Nocturne</h2></a>
         <p><a href="logout.php"><b><?= $_SESSION['username'] ?> <i class="fa-solid fa-right-from-bracket"></i></b></a></p>
     </header>
 
@@ -33,7 +33,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         <?php
         include '../../api/model/model.php';
         $model = new Model();
-        $insert = $model->addGame();
+        $insert = $model->addGame($_SESSION['username']);
         ?>
         <form action="" method="post">
             <div class="form-group">
