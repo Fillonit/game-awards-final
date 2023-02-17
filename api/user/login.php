@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } elseif ($row["isAdmin"] == 1) {
             $_SESSION["username"] = $username;
             $_SESSION["isAdmin"] = 1;
-            header("location:dashboard.php");
+            header("location:/api/admin/dashboard.php");
         }
     } else {
         echo "<script>alert('Incorrect username or password');</script>";

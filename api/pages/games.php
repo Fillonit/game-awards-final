@@ -12,7 +12,6 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../assets/css/games.css">
-    <script src="../../assets/js/games.js" defer></script>
 </head>
 
 <body>
@@ -20,6 +19,7 @@
     <div class="d-steam-cards js-steamCards">
         <!-- Cards inserted with JS -->
     </div>
+    <script src="../../assets/js/games.js" defer></script>
 </body>
 
 </html>

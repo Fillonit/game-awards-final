@@ -19,8 +19,8 @@
         public function insert(){
             // if(isset($_POST['submit'])){
 
-                $username = $_POST['username'];//blerina
-                $password = $_POST['password']; //blerina@ubt
+                $username = $_POST['username'];
+                $password = $_POST['password'];
 
                 $query = "INSERT INTO users(username, password) VALUES ('$username', '$password')";
                 if ($sql = $this->conn->query($query)) {
@@ -132,5 +132,23 @@
                 }
             }
             return $data;
+        }
+
+        public function contactMail(){
+            if ($_SERVER["REQUEST_METHOD"] === "POST"){
+
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $message = $_POST['message'];
+
+                $query = "INSERT INTO contact(name, email, message) VALUES ('$name', '$email', '$message')";
+                if ($sql = $this->conn->query($query)) {
+                    echo "<script>alert('Contact Message has been sent successfully');</script>";
+                    echo "<script>window.location.href = '/api/pages/index.php';</script>";
+                }else{
+                    echo "<script>alert('failed');</script>";
+                    echo "<script>window.location.href = '/api/user/login.php';</script>";
+                }
+            }
         }
     }
