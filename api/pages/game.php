@@ -89,10 +89,7 @@ session_start();
         <section class="reviews">
             <h2><span> Reviews </span></h2>
             <p>
-                "Grand Theft Auto V is a masterpiece of a game, offering players a vast open-world environment filled with endless possibilities. The characters are well-written and engaging, and the missions are both challenging and satisfying. Overall, this is a must-play for any fan of action-adventure games."
-            </p>
-            <p>
-                "This is one of the best games I have ever played. The open-world environment is huge and filled with interesting things to do, the graphics are stunning, and the storyline is engaging. Highly recommended!"
+                "Grand Theft Auto V is a masterpiece of a game, offering players a vast open-world environment filled with endless possibilities. The characters are well-written and engaging, and the missions are both challenging and satisfying. Overall, this is a must-play for any fan of action-adventure games.""This is one of the best games I have ever played. The open-world environment is huge and filled with interesting things to do, the graphics are stunning, and the storyline is engaging. Highly recommended!"
             </p>
         </section>
     </main>
