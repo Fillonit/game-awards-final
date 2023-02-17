@@ -75,7 +75,8 @@
 
             <!-- Add two cards to display the creators -->
             <div class="card">
-                <img src="https://xsgames.co/randomusers/assets/avatars/male/20.jpg" alt="Creator 1">
+                <!-- <img src="https://xsgames.co/randomusers/assets/avatars/male/20.jpg" alt="Creator 1"> -->
+                <img src="https://cdn.discordapp.com/attachments/900517859699077211/1076217251486760990/image.png" alt="Creator 1">
                 <p><strong>Fillonit Ibishi</strong></p>
                 <p>Creator 1 is a talented software developer with a passion for building innovative solutions. He has a
                     wealth of experience in the tech industry and is always looking for new challenges.</p>
