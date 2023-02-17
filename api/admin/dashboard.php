@@ -18,6 +18,36 @@ if ($_SESSION['isAdmin'] !== 1) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="../../assets/css/dashboard.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nocturne - Game Reviews & Awards</title>
+
+    <!-- HTML Meta Tags -->
+    <meta name="description" content="A game review and rating website. We like to rate our favorite games based on what they offer.">
+    <meta name="theme-color" content="#11f285">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Nocturne - Game Reviews & Awards">
+    <meta itemprop="description" content="A game review and rating website. We like to rate our favorite games based on what they offer.">
+    <meta itemprop="image" content="http://game-awards.vercel.app/assets/img/noctlogo1.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://game-awards.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nocturne - Game Reviews & Awards">
+    <meta property="og:description" content="A game review and rating website. We like to rate our favorite games based on what they offer.">
+    <meta property="og:image" content="http://game-awards.vercel.app/assets/img/noctlogo1.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nocturne - Game Reviews & Awards">
+    <meta name="twitter:description" content="A game review and rating website. We like to rate our favorite games based on what they offer.">
+    <meta name="twitter:image" content="http://game-awards.vercel.app/assets/img/noctlogo1.png">
+
+
+    <link rel="shortcut icon" href="../../assets/img/nocticon.png" type="image/x-icon">
     <script>
         function togglePassword(event) {
             let password = event.target;

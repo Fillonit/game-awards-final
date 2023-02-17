@@ -29,10 +29,8 @@ header p {
 
 th,
 td {
-    border: 1px solid lightgray;
     padding: 10px 15px;
     text-align: left;
-    background-color: white;
 }
 
 th {
@@ -90,26 +88,18 @@ table {
     border-collapse: collapse;
     background-color: #333;
     color: #fff;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-table,
+/* table,
 table th,
 table td {
     border: none;
-}
+} */
 
-table th tr:nth-child(even) {
-    background-color: #333;
-}
-
-table th tr:nth-child(odd) {
-    background-color: #444;
-}
-
-table td {
+/* table td {
     background-color: #1C1D1F;
-}
+} */
 
 p a {
     text-decoration: none;
@@ -126,3 +116,19 @@ input {
 header a {
     text-decoration: none;
 }
+th {
+    color: #1C1D1F;
+}
+
+table, table th, table td {
+    border: 1px solid #434851;
+}
+
+tr:nth-child(even) {
+    background-color: #1C1D1F;
+}
+
+tr:nth-child(odd) {
+    background-color: #121111;
+}
+  

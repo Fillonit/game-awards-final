@@ -49,7 +49,7 @@
 }
 
 .container .content .logo {
-    background-image: url('./assets/img/noctlogo1.png');
+    background-image: url('../img/noctlogo1.png');
     background-size: cover;
     width: 270px;
     height: 80px;

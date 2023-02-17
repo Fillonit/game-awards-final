@@ -64,6 +64,50 @@
         .card p {
             padding: 10px 20px;
         }
+        body {
+            background-color: #1c1c1c;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+/*             margin-top: 80px; */
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* Add some style to the cards */
+        .card {
+            background-color: #242424;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin: 20px;
+            max-width: 350px;
+            height: 500px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        /* Add some style to the card images */
+        .card img {
+            border-radius: 5px 5px 0px 0px;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Add some style to the card text */
+        .card p {
+            font-size: 16px;
+            padding: 10px;
+        }
     </style>
     </head>
 

@@ -116,6 +116,20 @@ form {
     margin-top: 25vh;
 }
 
+.map {
+    width: 40%;
+    float: left;
+    padding-left: 200px;
+    padding-top: 50px;
+}
+
+form {
+    width: 40%;
+    float: right;
+    margin-right: 200px;
+}
+
+
 /* textarea,
 input,
 button {

@@ -35,6 +35,9 @@
         $model = new Model();
         $insert = $model->contactMail();
         ?>
+    <div class="map">
+    <iframe src="https://maps.google.com/maps?q=ubt%20emshir&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=&amp;output=embed" id="gmap_canvas" frameborder="0" scrolling="no" style="width: 700px; height: 350px;"></iframe>
+    </div>
     <form onsubmit="validate();" method="POST" action="contact.php">
         <div class="form-group">
             <label for="name">Name:</label>
