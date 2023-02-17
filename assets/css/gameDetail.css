@@ -114,9 +114,13 @@ h2 span {
     margin: 0 -.5rem;
     padding: 0 .5rem;
     transition: color .6s ease-in-out, box-shadow .3s ease-in-out;
-  }
-  .game-info span:hover {
+}
+
+.game-info span:hover {
     box-shadow: inset 400px 0 0 0 #0eca6f;
     color: white;
-  }
-  
+}
+
+main>section p {
+    text-align: center;
+}

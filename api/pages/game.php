@@ -59,11 +59,11 @@ session_start();
     <main>
         <div class="game-container">
             <div class="game-image">
-                <img src="https://expatguideturkey.com/wp-content/uploads/2023/01/gta-5-how-many-gb-here-are-the-gta-v-system-requirements-2023-780x470.webp" alt="Game Image">
+                <video width="100%" height="100%" no-controls autoplay loop muted src="https://cdn.akamai.steamstatic.com/steam/apps/256921436/movie_max_vp9.webm?t=1671116368">
             </div>
             <!-- <div class="divider"></div> -->
             <section class="game-info">
-                <h2><span id="gameInfoText">  Game Information  </span></h2>
+                <h2><span id="gameInfoText"> Game Information </span></h2>
                 <p>Title: <span>Grand Theft Auto V</span></p><br />
                 <p>Genre: <span>Action-Adventure</span></p><br />
                 <p>Developer: <span>Rockstar North</span></p><br />
@@ -75,27 +75,19 @@ session_start();
         </div>
 
         <section>
-            <h2><span>  Game Description  </span></h2>
+            <h2><span> Game Description </span></h2>
             <p>Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. The game is set in the fictional city of Los Santos, based on Los Angeles, and follows three criminals as they perform heists and other missions. Grand Theft Auto V offers players a massive open-world environment to explore, filled with various side missions, random events, and dynamic content.</p>
         </section>
 
-        <h2><span>  Screenshots  </span></h2>
+        <h2><span> Screenshots </span></h2>
         <section class="screenshots">
             <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_32aa18ab3175e3002217862dd5917646d298ab6b.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 1">
             <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_bc5fc79d3366c837372327717249a4887aa46d63.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 2">
             <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_d2eb9d3e50f9e4cb8db37d2976990b3795da8187.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 3">
-        </section>
-
-        <h2><span>  Trailer  </span></h2>
-        <section class="video">
-            <video width="50%" height="50%" no-controls autoplay loop muted src="https://cdn.akamai.steamstatic.com/steam/apps/256921436/movie_max_vp9.webm?t=1671116368">
-                <!-- <source src="https://cdn.akamai.steamstatic.com/steam/apps/256921436/movie_max_vp9.webm?t=1671116368" type="video/webm" > -->
-                Your browser does not support the video tag.
-            </video>
-        </section>
+        </section>  
 
         <section class="reviews">
-            <h2><span>  Reviews  </span></h2>
+            <h2><span> Reviews </span></h2>
             <p>
                 "Grand Theft Auto V is a masterpiece of a game, offering players a vast open-world environment filled with endless possibilities. The characters are well-written and engaging, and the missions are both challenging and satisfying. Overall, this is a must-play for any fan of action-adventure games."
             </p>
