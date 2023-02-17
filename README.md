@@ -27,4 +27,13 @@ Game Ratings and Awards - Project for "Inxhinieria e Web-it"
 - [x] Login with permission checks
 - [x] Regsiter with redirect
 - [x] getGames method (*`model.php`*)
-- [ ] 
+- [x] loop through getGames and display in homepage
+- [x] `addUsers` method for admin users 
+- [x] `delete` method for admin users 
+- [x] `edit` method for admin users 
+- [x] show `addUsers`, `delete`, `edit` in dashboard 
+- [x] convert the pages to .php (ext)
+- [x] implement DB connection to `contact.php` and save the feedback in the database
+- [x] Username in header in pages.
+- [x] Logout to destroy sessions and redirect to homepage
+- [x] Fix and sort file structure

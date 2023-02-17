@@ -25,6 +25,11 @@ class Model
         $username = $_POST['username'];
         $password = $_POST['password'];
 
+        if (empty($username) || empty($password)) {
+            echo "Please fill all the fields.";
+            exit();
+        }
+
         $query = "INSERT INTO users(username, password) VALUES ('$username', '$password')";
         if ($sql = $this->conn->query($query)) {
             echo "<script>alert('records added successfully');</script>";
