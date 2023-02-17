@@ -33,23 +33,23 @@ if ($_SESSION['isAdmin'] !== 1) {
         <?php
         include '../../api/model/model.php';
         $model = new Model();
-        $insert = $model->addUser();
+        $insert = $model->addGame();
         ?>
         <form action="" method="post">
             <div class="form-group">
-                <label for="">Username</label><br />
-                <input type="text" name="username" class="form-control">
+                <label for="">Game Title</label><br />
+                <input type="text" name="gameTitle" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Password</label><br />
-                <input type="text" name="password" class="form-control">
+                <label for="">Game Rating</label><br />
+                <input type="number" name="gameRating" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">isAdmin?</label><br />
-                <input type="text" name="isAdmin" class="form-control">
+                <label for="">Image URL</label><br />
+                <input type="text" name="imageURL" class="form-control">
             </div>
             <div class="form-group">
-                <button type="submit" name="submit" class="btn edit-btn"><i class="fa-solid fa-user-plus"></i> Add User</button>
+                <button type="submit" name="submit" class="btn edit-btn"><i class="fa-solid fa-gamepad"></i> Add Game</button>
             </div>
         </form>
     </div>

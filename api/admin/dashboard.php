@@ -34,7 +34,7 @@ if ($_SESSION['isAdmin'] !== 1) {
 <body>
     <!-- Header with website title on the left and username on the right -->
     <header>
-        <h2>Nocturne</h2>
+        <a href="/api/admin/dashboard.php"><h2>Nocturne</h2></a>
         <p><a href="logout.php"><b><?= $_SESSION['username'] ?> <i class="fa-solid fa-right-from-bracket"></i></b></a></p>
     </header>
 
@@ -44,6 +44,12 @@ if ($_SESSION['isAdmin'] !== 1) {
             <button class="btn add-btn">
                 <i class="fa-solid fa-user-plus"></i>
                 Add a User
+            </button>
+        </a>
+        <a href="addGame.php">
+            <button class="btn add-btn">
+            <i class="fa-solid fa-gamepad"></i>
+                Add a Game
             </button>
         </a>
     </center>

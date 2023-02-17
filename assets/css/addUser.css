@@ -104,3 +104,6 @@ p a {
     color: white;
     font-size: 18px;
 }
+header a {
+    text-decoration: none;
+}

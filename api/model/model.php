@@ -33,10 +33,10 @@ class Model
         $query = "INSERT INTO users(username, password) VALUES ('$username', '$password')";
         if ($sql = $this->conn->query($query)) {
             echo "<script>alert('records added successfully');</script>";
-            echo "<script>window.location.href = '/';</script>";
+            echo "<script>window.location.href = '/api/pages/index.php';</script>";
         } else {
             echo "<script>alert('failed');</script>";
-            echo "<script>window.location.href = 'login.php';</script>";
+            echo "<script>window.location.href = '/api/user/login.php';</script>";
         }
         // }
     }
@@ -130,10 +130,10 @@ class Model
             $query = "INSERT INTO users(username, password, isAdmin) VALUES ('$username','$password', '$isAdmin')";
             if ($sql = $this->conn->query($query)) {
                 echo "<script>alert('records added successfully');</script>";
-                echo "<script>window.location.href = 'dashboard.php';</script>";
+                echo "<script>window.location.href = '/api/admin/dashboard.php';</script>";
             } else {
                 echo "<script>alert('failed');</script>";
-                echo "<script>window.location.href = 'login.php';</script>";
+                echo "<script>window.location.href = '/api/admin/dashboard.php';</script>";
             }
         }
     }
@@ -169,7 +169,26 @@ class Model
                 echo "<script>window.location.href = '/api/pages/index.php';</script>";
             } else {
                 echo "<script>alert('failed');</script>";
-                echo "<script>window.location.href = '/api/user/login.php';</script>";
+                echo "<script>window.location.href = '/api/user/index.php';</script>";
+            }
+        }
+    }
+
+    public function addGame()
+    {
+        if (isset($_POST['submit'])) {
+
+            $gameTitle = $_POST['gameTitle'];
+            $gameRating = $_POST['gameRating'];
+            $imageURL = $_POST['imageURL'];
+
+            $query = "INSERT INTO games(gameTitle, gameRating, imageURL) VALUES ('$gameTitle','$gameRating', '$imageURL')";
+            if ($sql = $this->conn->query($query)) {
+                echo "<script>alert('records added successfully');</script>";
+                echo "<script>window.location.href = '/api/pages/index.php';</script>";
+            } else {
+                echo "<script>alert('failed');</script>";
+                echo "<script>window.location.href = '/api/pages/dashboard.php';</script>";
             }
         }
     }
