@@ -81,7 +81,8 @@
                     wealth of experience in the tech industry and is always looking for new challenges.</p>
             </div>
             <div class="card">
-                <img src="https://xsgames.co/randomusers/assets/avatars/male/21.jpg" alt="Creator 2">
+                <!-- <img src="https://xsgames.co/randomusers/assets/avatars/male/21.jpg" alt="Creator 2"> -->
+                <img src="https://cdn.discordapp.com/attachments/966126234075561994/1076163955665412156/image.png" alt="Creator 2">
                 <p><strong>Drin Vitia</strong></p>
                 <p>Creator 2 is a talented software developer with a passion for building innovative solutions. He has a
                     wealth of experience in the tech industry and is always looking for new challenges.</p>
