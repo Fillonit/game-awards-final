@@ -178,11 +178,21 @@ class Model
     {
         if (isset($_POST['submit'])) {
 
-            $gameTitle = $_POST['gameTitle'];
-            $gameRating = $_POST['gameRating'];
-            $imageURL = $_POST['imageURL'];
+            // $gameTitle = $_POST['gameTitle'];
+            $gameTitle = mysqli_real_escape_string($this->conn, $_POST['gameTitle']);
+            $gameRating = mysqli_real_escape_string($this->conn, $_POST['gameRating']);
+            $imageURL = mysqli_real_escape_string($this->conn, $_POST['imageURL']);
+            $videoURL = mysqli_real_escape_string($this->conn, $_POST['videoURL']);
+            $genre = mysqli_real_escape_string($this->conn, $_POST['genre']);
+            $developer = mysqli_real_escape_string($this->conn, $_POST['developer']);
+            $publisher = mysqli_real_escape_string($this->conn, $_POST['publisher']);
+            $releaseDate = mysqli_real_escape_string($this->conn, $_POST['releaseDate']);
+            $platforms = mysqli_real_escape_string($this->conn, $_POST['platforms']);
+            $gameDescription = mysqli_real_escape_string($this->conn, $_POST['gameDescription']);
+            $screenshots = mysqli_real_escape_string($this->conn, $_POST['screenshots']);
+            $review = mysqli_real_escape_string($this->conn, $_POST['review']);
 
-            $query = "INSERT INTO gamesList(gameTitle, gameRating, imageURL, lastEditBy) VALUES ('$gameTitle','$gameRating', '$imageURL', '$username')";
+            $query = "INSERT INTO gamesList(gameTitle, gameRating, imageURL, videoURL, genre, developer, publisher, releaseDate, platforms, gameDescription, screenshots, review, lastEditBy) VALUES ('$gameTitle', '$gameRating', '$imageURL', '$videoURL', '$genre', '$developer', '$publisher', '$releaseDate', '$platforms', '$gameDescription', '$screenshots', '$review', '$username')";
             if ($sql = $this->conn->query($query)) {
                 echo "<script>alert('records added successfully');</script>";
                 echo "<script>window.location.href = '/api/pages/index.php';</script>";
@@ -203,5 +213,13 @@ class Model
             }
         }
         return $data;
+    }
+
+    public function getGameByID($gameID)
+    {
+        $data = null;
+        $query = "SELECT * FROM gamesList WHERE id = '$gameID'";
+        $result = mysqli_query($this->conn, $query);
+        return $result;
     }
 }

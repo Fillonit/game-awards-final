@@ -18,7 +18,7 @@
 <body>
     <div class="header">
         <!-- <img src="" alt="" class="logo"> -->
-        <a href="/" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
+        <a href="/api/pages/index.php" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
         <div class="nav">
             <a href="/api/pages/index.php">Home</a>
             <a href="/api/pages/about.php">About</a>

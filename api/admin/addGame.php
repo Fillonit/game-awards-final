@@ -49,6 +49,42 @@ if ($_SESSION['isAdmin'] !== 1) {
                 <input type="text" name="imageURL" class="form-control">
             </div>
             <div class="form-group">
+                <label for="">Video URL</label><br />
+                <input type="text" name="videoURL" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Genres</label><br />
+                <input type="text" name="genre" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Developer</label><br />
+                <input type="text" name="developer" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Publisher</label><br />
+                <input type="text" name="publisher" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Release Date</label><br />
+                <input type="date" name="releaseDate" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Platforms</label><br />
+                <input type="text" name="platforms" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Game Description</label><br />
+                <input type="text" name="gameDescription" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Screenshots</label><br />
+                <input type="text" name="screenshots" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Review</label><br />
+                <input type="text" name="review" class="form-control">
+            </div>
+            <div class="form-group">
                 <button type="submit" name="submit" class="btn edit-btn"><i class="fa-solid fa-gamepad"></i> Add Game</button>
             </div>
         </form>

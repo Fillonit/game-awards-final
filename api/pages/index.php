@@ -43,7 +43,7 @@ session_start();
     <div class="header">
         <!-- <img src="" alt="" class="logo"> -->
         <!-- <a href="/" class="logo"><h1 class="logo">Nocturne</h1></a> -->
-        <a href="/" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
+        <a href="/api/pages/index.php" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
         <div class="nav">
             <a href="/api/pages/index.php">Home</a>
             <a href="/api/pages/about.php">About</a>
@@ -133,7 +133,7 @@ session_start();
                     <span class=" title"><?php echo $row['gameTitle']; ?></span>
                         </h1>
                         <h2 class="gameRating""><?php echo $row['gameRating']; ?></h2>
-                    <a href=" /game.html?id=<?php echo $row['id']; ?>"><button class="gameButton">Open Review</button></a>
+                    <a href="/api/pages/game.php?id=<?php echo $row['id']; ?>"><button class="gameButton">Open Review</button></a>
                     </div>
             <?php
                 }

@@ -44,7 +44,7 @@ session_start();
     <div class="header">
         <!-- <img src="" alt="" class="logo"> -->
         <!-- <a href="/" class="logo"><h1 class="logo">Nocturne</h1></a> -->
-        <a href="/" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
+        <a href="/api/pages/index.php" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
         <div class="nav">
             <a href="/api/pages/index.php">Home</a>
             <a href="/api/pages/about.php">About</a>
@@ -58,38 +58,59 @@ session_start();
     </div>
     <main>
         <div class="game-container">
+            <?php
+            include "../../api/model/model.php";
+            $model = new Model();
+            $id = $_GET['id'];
+            if(!isset($_GET['id'])) {
+                 echo '<script>alert("Please provide a valid ID")</script>';
+                 echo '<script>window.location.href = "/api/pages/index.php"</script>';
+            }
+            $row = $model->getGameByID($id);
+            $game = mysqli_fetch_array($row);
+            if($game) {
+                $video = $game['videoURL'];
+            ?>
             <div class="game-image">
-                <video width="100%" height="100%" no-controls autoplay loop muted src="https://cdn.akamai.steamstatic.com/steam/apps/256921436/movie_max_vp9.webm?t=1671116368">
+                <?php echo "<video width=\"100%\" height=\"100%\" no-controls autoplay loop muted src=\"$video\">"; ?>
             </div>
             <!-- <div class="divider"></div> -->
             <section class="game-info">
                 <h2><span id="gameInfoText"> Game Information </span></h2>
-                <p>Title: <span>Grand Theft Auto V</span></p><br />
-                <p>Genre: <span>Action-Adventure</span></p><br />
-                <p>Developer: <span>Rockstar North</span></p><br />
-                <p>Publisher: <span>Rockstar Games</span></p><br />
-                <p>Release Date: <span>September 17, 2013<span></p><br />
-                <p>Platforms: <span>PS 3, Xbox 360, PS 4, Xbox One, PC</span></p>
+                <p>Title: <span><?php echo $game['gameTitle'] ?></span></p><br />
+                <p>Genre: <span><?php echo join(", ", explode(',', $game['genre'])); ?></span></p><br />
+                <p>Developer: <span><?php echo $game['developer'] ?></span></p><br />
+                <p>Publisher: <span><?php echo $game['publisher'] ?></span></p><br />
+                <p>Release Date: <span><?php echo date("d-m-Y", strtotime($game['releaseDate']));?><span></p><br />
+                <p>Platforms: <span><?php echo join(", ", explode(',', $game['platforms'])); ?></span></p>
             </section>
 
         </div>
 
         <section>
             <h2><span> Game Description </span></h2>
-            <p>Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. The game is set in the fictional city of Los Santos, based on Los Angeles, and follows three criminals as they perform heists and other missions. Grand Theft Auto V offers players a massive open-world environment to explore, filled with various side missions, random events, and dynamic content.</p>
+            <p><?php echo $game['gameDescription']; ?></p>
         </section>
 
         <h2><span> Screenshots </span></h2>
         <section class="screenshots">
-            <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_32aa18ab3175e3002217862dd5917646d298ab6b.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 1">
+            <?php 
+                $screenshots = $game['screenshots'];
+                $screenshots = explode("|", $screenshots);
+                foreach ($screenshots as $screenshot) {
+                    echo "<img src=\"$screenshot\" alt=\"Screenshot\">";
+                }
+            ?>
+
+            <!-- <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_32aa18ab3175e3002217862dd5917646d298ab6b.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 1">
             <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_bc5fc79d3366c837372327717249a4887aa46d63.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 2">
-            <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_d2eb9d3e50f9e4cb8db37d2976990b3795da8187.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 3">
+            <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_d2eb9d3e50f9e4cb8db37d2976990b3795da8187.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 3"> -->
         </section>  
 
         <section class="reviews">
             <h2><span> Reviews </span></h2>
             <p>
-                "Grand Theft Auto V is a masterpiece of a game, offering players a vast open-world environment filled with endless possibilities. The characters are well-written and engaging, and the missions are both challenging and satisfying. Overall, this is a must-play for any fan of action-adventure games.""This is one of the best games I have ever played. The open-world environment is huge and filled with interesting things to do, the graphics are stunning, and the storyline is engaging. Highly recommended!"
+               <?php echo $game['review']?>
             </p>
         </section>
     </main>
@@ -106,6 +127,10 @@ session_start();
         </div>
     </footer>
     <?php
+    } else {
+        echo '<script>alert("The game doesn\'t exist in our database.")</script>';
+        echo '<script>window.location.href = "/api/pages/index.php"</script>';
+    }
     if (isset($_SESSION['isAdmin'])) {
         if ($_SESSION['isAdmin'] === 1) {
             echo "<script>
