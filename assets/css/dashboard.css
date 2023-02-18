@@ -71,6 +71,7 @@ table th:last-child,
 table td:last-child {
     width: 100px;
     text-align: center;
+    overflow: hidden;
 }
 
 .btn:hover {

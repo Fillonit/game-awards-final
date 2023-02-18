@@ -341,23 +341,19 @@ footer a:hover {
     top: 0;
 }
 
-/* width */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     border-radius: 0px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: #11f285;
     border-radius: 0px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #0eca6f;
 }
