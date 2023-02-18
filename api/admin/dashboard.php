@@ -94,6 +94,7 @@ if ($_SESSION['isAdmin'] !== 1) {
             <th>Username</th>
             <th>Password</th>
             <th>isAdmin?</th>
+            <th>Last Edited By</th>
             <th>Actions</th>
         </tr>
         <?php
@@ -109,6 +110,7 @@ if ($_SESSION['isAdmin'] !== 1) {
                     <td><?php echo $row['username']; ?></td>
                     <td><input type="password" value="<?php echo $row['password']; ?>" onclick="togglePassword(event)" readonly/></td>
                     <td><?php echo $row['isAdmin']; ?></td>
+                    <td><?php echo $row['lastEditBy']; ?></td>
                     <td>
                         <a href="edit.php?id=<?php echo $row['id']; ?>">
                             <button class="btn edit-btn">

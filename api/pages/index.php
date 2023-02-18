@@ -52,7 +52,7 @@ session_start();
             <a href="/api/admin/dashboard.php" id="dashboardURL">Dashboard</a>
         </div>
 
-        <a href="/api/user/login.php"><button class="LoginBtn" id="LoginBtn"><span id="loggedInUser">Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
+        <a href="/api/user/login.php" id="loginLink"><button class="LoginBtn" id="LoginBtn"><span id="loggedInUser">Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
     </div>
     <div class="slideshow-container">
 
