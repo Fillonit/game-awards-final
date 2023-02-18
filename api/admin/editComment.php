@@ -1,7 +1,13 @@
 <?php
 session_start();
 
-if ($_SESSION['isAdmin'] !== 1) {
+include '../../api/model/model.php';
+$model = new Model();
+$id = $_REQUEST['id'];
+$gameID = $_REQUEST['gameID'];
+$validation = $model->validateCommentOwner($id, $_SESSION['username']);
+
+if ($_SESSION['isAdmin'] !== 1 && $validation !== true) {
     echo "<script>window.location.href = '/api/pages/index.php';</script>";
 }
 ?>
@@ -53,32 +59,33 @@ if ($_SESSION['isAdmin'] !== 1) {
       <div class="row">
         <div class="col-md-5 mx-auto">
           <?php
-              include '../../api/model/model.php';
-              $model = new Model();
-              $id = $_REQUEST['id'];
-              $row = $model->edit($id);
+            //   include '../../api/model/model.php';
+            //   $model = new Model();
+            //   $id = $_REQUEST['id'];
+              $row = $model->editComment($id);
  
               if (isset($_POST['update'])) {
-                if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['isAdmin'])) {
+                if (isset($_POST['username']) && isset($_POST['comment'])) {
                      
                     $data['id'] = $id;
                     $data['username'] = $_POST['username'];
-                    $data['password'] = $_POST['password'];
-                    $data['isAdmin'] = $_POST['isAdmin'];
+                    $data['comment'] = $_POST['comment'];
+                    
+                    $prevURL = '/api/pages/game.php?id='.$gameID;
  
-                    $update = $model->update($data);
+                    $update = $model->updateComment($data);
  
                     if($update){
                       echo "<script>alert('record update successfully');</script>";
-                      echo "<script>window.location.href = 'dashboard.php';</script>";
+                      echo "<script>window.location.href = '$prevURL';</script>";
                     }else{
                       echo "<script>alert('record update failed');</script>";
-                      echo "<script>window.location.href = 'dashboard.php';</script>";
+                      echo "<script>window.location.href = '$prevURL';</script>";
                     }
  
                   }else{
                     echo "<script>alert('empty');</script>";
-                    header("Location: edit.php?id=$id");
+                    header("Location: editComment.php?id=$id");
                   }
                 }
           ?>
@@ -89,11 +96,7 @@ if ($_SESSION['isAdmin'] !== 1) {
             </div>
             <div class="form-group">
               <label for="">Password</label>
-              <input type="text" name="password" value="<?php echo $row['password']; ?>" class="form-control" autocomplete="off">
-            </div>
-            <div class="form-group">
-              <label for="">isAdmin?</label>
-              <input type="text" name="isAdmin" value="<?php echo $row['isAdmin']; ?>" class="form-control" autocomplete="off">
+              <input type="text" name="comment" value="<?php echo $row['comment']; ?>" class="form-control" autocomplete="off">
             </div>
             <div class="form-group">
               <button type="submit" name="update" class="btn add-btn">Submit</button>

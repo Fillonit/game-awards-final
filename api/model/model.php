@@ -239,7 +239,7 @@ class Model
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-            $comment = $_POST['comment'];
+            $comment = mysqli_real_escape_string($this->conn, $_POST['comment']);
 
             $query = "INSERT INTO comments(gameID, username, comment) VALUES ('$gameID', '$username', '$comment')";
             if ($sql = $this->conn->query($query)) {
@@ -250,5 +250,69 @@ class Model
                 // echo "<script>window.location.href = '/api/user/index.php';</script>";
             }
         }
+    }
+
+    public function editComment($id)
+    {
+
+        $data = null;
+
+        $query = "SELECT * FROM comments WHERE id = '$id'";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = $sql->fetch_assoc()) {
+                $data = $row;
+            }
+        }
+        return $data;
+    }
+
+    public function updateComment($data)
+    {
+
+        $query = "UPDATE comments SET id='$data[id]', username='$data[username]', comment='$data[comment]' WHERE comments.id='$data[id]'";
+
+        if ($sql = $this->conn->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deleteComment($id)
+    {
+
+        $query = "DELETE FROM comments where id = '$id'";
+        if ($sql = $this->conn->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function getCommentById($id)
+    {
+        $query = "SELECT * FROM comments WHERE id = '$id'";
+        $result = $this->conn->query($query);
+        if ($result->num_rows == 1) {
+            return $result->fetch_assoc();
+        } else {
+            echo "<script>alert('failed');</script>";
+            return false;
+        }
+    }
+
+    public function validateCommentOwner($id, $username)
+    {
+        if (!isset($username)) {
+            return false;
+        }
+        $query = "SELECT * FROM comments WHERE id='$id'";
+        $result = $this->conn->query($query);
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            if ($row['username'] == $username) {
+                return true;
+            }
+        }
+        return false;
     }
 }

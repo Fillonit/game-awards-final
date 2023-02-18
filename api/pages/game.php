@@ -117,25 +117,53 @@ session_start();
         <section class="comments">
             <h2><span> Comments </span></h2>
             <?php
+            if(!isset($_SESSION['username'])) {
+                // echo "<center>Please login to comment!</center>";
+                // return;
+                $username = 'Anonymous User';
+            } else {
                 $username = $_SESSION['username'];
+            }
                 $insert = $model->insertComment($id, $username);
             ?>
             <form method="POST" action="" class="comment-form">
                 <textarea name="comment" id="comment" required></textarea>
+                <input type="hidden" name="previous_url" value="/api/pages/game.php?id=<?php echo $id ?>">
                 <div class="comment-submit">
-                    <span>Commenting as: <span class='commentUsername'><?php echo $_SESSION['username']; ?></span></span>
+                    <span>Commenting as: <span class='commentUsername'><?php echo $username; ?></span></span>
                     <button type="submit" class="LoginBtn">Submit</button>
                 </div>
             </form>
             <?php
                 $rows = $model->fetchComments($id);
                 $i = 1;
+                if(!isset($_SESSION['isAdmin'])) {
+                    // echo "<center>Please login to comment!</center>";
+                    // return;
+                    $isAdmin = 0;
+                } else {
+                    $isAdmin = $_SESSION['isAdmin'];
+                }
                 if (!empty($rows)) {
                     foreach ($rows as $row) {
             ?>
                     <div class="comment">
                         <p class="commentDetails"><span><?php echo $row['username']; ?></span> @ <?php echo $row['createdAt']; ?></p>
                         <p class="commentContent"><?php echo $row['comment'] ?></p>
+                        <?php if ((isset($_SESSION['username']) && $row['username'] == $_SESSION['username']) || $isAdmin === 1) { ?>
+                            <div class="commentActions">
+                                <a href="/api/admin/editComment.php?id=<?php echo $row['id']; ?>&gameID=<?php echo $row['gameID'] ?>">
+                                    <button class="btn edit-btn">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>
+                                </a>
+                                <a href="/api/admin/deleteComment.php?id=<?php echo $row['id']; ?>&gameID=<?php echo $row['gameID'] ?>">
+                                    <button class="btn delete-btn">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </a>
+                            </div>
+                        <?php } ?>
                     </div>
             <?php
                     }
