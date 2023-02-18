@@ -42,7 +42,8 @@ if ($_SESSION['isAdmin'] !== 1) {
         }
 
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 3px;
+            height: 3px;
         }
 
         ::-webkit-scrollbar-track {
