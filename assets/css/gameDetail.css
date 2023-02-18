@@ -233,3 +233,8 @@ main>section p {
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.comments {
+    padding-left: 125px;
+    padding-right: 125px;
+}
