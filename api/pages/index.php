@@ -148,9 +148,9 @@ session_start();
             <p>&copy; Copyright 2022</p>
             <nav>
                 <ul>
-                    <li><a href="/TOS.html">Terms of Use</a></li>
+                    <li><a href="/api/pages/TOS.php">Terms of Use</a></li>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/api/pages/contact.php">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -180,6 +180,17 @@ session_start();
         echo "<script>
         let user = document.getElementById('loggedInUser');
         user.innerText = '$username';
+        let LoginBtn = document.getElementById('LoginBtn');
+        LoginBtn.setAttribute('title', 'Log Out');
+        </script>";
+        echo "<script>
+        let loginLink = document.getElementById('loginLink');
+        loginLink.href = '/api/user/logout.php';
+        </script>";
+    } else {
+        echo "<script>
+        let LoginBtn = document.getElementById('LoginBtn');
+        LoginBtn.setAttribute('title', 'Log In');
         </script>";
     }
     ?>
