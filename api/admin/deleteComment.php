@@ -4,6 +4,7 @@ session_start();
 include '../../api/model/model.php';
 $model = new Model();
 $id = $_REQUEST['id'];
+$gameID = $_REQUEST['gameID'];
 $prevURL = '/api/pages/game.php?id='.$gameID;
 $validation = $model->validateCommentOwner($id, $_SESSION['username']);
 
