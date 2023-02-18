@@ -116,12 +116,12 @@ session_start();
     </main>
     <footer>
         <div class="footer-container">
-            <p>&copy; Copyright 2022</p>
+            <p>&copy; Copyright <?php echo date("Y"); ?></p>
             <nav>
                 <ul>
-                    <li><a href="/TOS.html">Terms of Use</a></li>
+                    <li><a href="/api/pages/TOS.php">Terms of Use</a></li>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="/api/pages/contact.php">Contact Us</a></li>
                 </ul>
             </nav>
         </div>

@@ -145,7 +145,7 @@ session_start();
     </main>
     <footer>
         <div class="footer-container">
-            <p>&copy; Copyright 2022</p>
+            <p>&copy; Copyright <?php echo date("Y"); ?></p>
             <nav>
                 <ul>
                     <li><a href="/api/pages/TOS.php">Terms of Use</a></li>
