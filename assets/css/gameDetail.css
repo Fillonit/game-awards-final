@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 100px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .game-info {
@@ -124,4 +127,56 @@ h2 span {
 
 main>section p {
     text-align: center;
+}
+
+.comment-form textarea {
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+  /*   border: 2px solid #ccc; */
+    border-radius: 0px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  .comment-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .comment-submit button {
+    margin-left: 0px;
+  }
+  
+  .comment-submit span {
+    margin-right: 0px;
+  }
+  
+  .commentUsername  {
+      color: #0eca6f;
+      font-weight: bold;
+  }
+  
+  .commentDetails span {
+    margin: 0px;
+    padding: 0px;
+    color: #0eca6f;
+    font-weight: bold;
+}
+.commentDetails {
+    color: #aaa;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.comment {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid white;
+    vertical-align: middle;
 }

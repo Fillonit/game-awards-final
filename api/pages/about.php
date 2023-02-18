@@ -30,10 +30,7 @@
         <a href="/api/user/login.php"><button class="LoginBtn" id="LoginBtn"><span id="loggedInUser">Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
     </div>
     <style>
-        /* Add some fancy styling to the page */
         body {
-            /* background-color: lightblue; */
-            /* font-family: Arial, sans-serif; */
             text-align: center;
             vertical-align: center;
 
@@ -43,7 +40,6 @@
             color: white;
         }
 
-        /* Add some style to the cards */
         .card {
             background-color: darkslategray;
             border-radius: 5px;
@@ -54,13 +50,11 @@
             text-align: left;
         }
 
-        /* Add some style to the card images */
         .card img {
             border-radius: 0px;
             width: 100%;
         }
 
-        /* Add some style to the card text */
         .card p {
             padding: 10px 20px;
         }
@@ -73,7 +67,6 @@
 
         h1 {
             font-size: 48px;
-/*             margin-top: 80px; */
         }
 
         p {
@@ -82,7 +75,6 @@
             margin-bottom: 40px;
         }
 
-        /* Add some style to the cards */
         .card {
             background-color: #242424;
             border-radius: 5px;
@@ -94,8 +86,6 @@
             text-align: left;
             vertical-align: top;
         }
-
-        /* Add some style to the card images */
         .card img {
             border-radius: 5px 5px 0px 0px;
             width: 100%;
@@ -103,7 +93,6 @@
             object-fit: cover;
         }
 
-        /* Add some style to the card text */
         .card p {
             font-size: 16px;
             padding: 10px;

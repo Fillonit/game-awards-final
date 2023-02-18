@@ -62,28 +62,28 @@ session_start();
             include "../../api/model/model.php";
             $model = new Model();
             $id = $_GET['id'];
-            if(!isset($_GET['id'])) {
-                 echo '<script>alert("Please provide a valid ID")</script>';
-                 echo '<script>window.location.href = "/api/pages/index.php"</script>';
+            if (!isset($_GET['id'])) {
+                echo '<script>alert("Please provide a valid ID")</script>';
+                echo '<script>window.location.href = "/api/pages/index.php"</script>';
             }
             $row = $model->getGameByID($id);
             $game = mysqli_fetch_array($row);
-            if($game) {
+            if ($game) {
                 $video = $game['videoURL'];
             ?>
-            <div class="game-image">
-                <?php echo "<video width=\"100%\" height=\"100%\" no-controls autoplay loop muted src=\"$video\">"; ?>
-            </div>
-            <!-- <div class="divider"></div> -->
-            <section class="game-info">
-                <h2><span id="gameInfoText"> Game Information </span></h2>
-                <p>Title: <span><?php echo $game['gameTitle'] ?></span></p><br />
-                <p>Genre: <span><?php echo join(", ", explode(',', $game['genre'])); ?></span></p><br />
-                <p>Developer: <span><?php echo $game['developer'] ?></span></p><br />
-                <p>Publisher: <span><?php echo $game['publisher'] ?></span></p><br />
-                <p>Release Date: <span><?php echo date("d-m-Y", strtotime($game['releaseDate']));?><span></p><br />
-                <p>Platforms: <span><?php echo join(", ", explode(',', $game['platforms'])); ?></span></p>
-            </section>
+                <div class="game-image">
+                    <?php echo "<video width=\"100%\" height=\"100%\" no-controls autoplay loop muted src=\"$video\">"; ?>
+                </div>
+                <!-- <div class="divider"></div> -->
+                <section class="game-info">
+                    <h2><span id="gameInfoText"> Game Information </span></h2>
+                    <p>Title: <span><?php echo $game['gameTitle'] ?></span></p><br />
+                    <p>Genre: <span><?php echo join(", ", explode(',', $game['genre'])); ?></span></p><br />
+                    <p>Developer: <span><?php echo $game['developer'] ?></span></p><br />
+                    <p>Publisher: <span><?php echo $game['publisher'] ?></span></p><br />
+                    <p>Release Date: <span><?php echo date("d-m-Y", strtotime($game['releaseDate'])); ?><span></p><br />
+                    <p>Platforms: <span><?php echo join(", ", explode(',', $game['platforms'])); ?></span></p>
+                </section>
 
         </div>
 
@@ -94,7 +94,7 @@ session_start();
 
         <h2><span> Screenshots </span></h2>
         <section class="screenshots">
-            <?php 
+            <?php
                 $screenshots = $game['screenshots'];
                 $screenshots = explode("|", $screenshots);
                 foreach ($screenshots as $screenshot) {
@@ -105,14 +105,46 @@ session_start();
             <!-- <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_32aa18ab3175e3002217862dd5917646d298ab6b.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 1">
             <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_bc5fc79d3366c837372327717249a4887aa46d63.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 2">
             <img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_d2eb9d3e50f9e4cb8db37d2976990b3795da8187.600x338.jpg?t=1671485100" alt="Grand Theft Auto V Screenshot 3"> -->
-        </section>  
+        </section>
 
         <section class="reviews">
             <h2><span> Reviews </span></h2>
             <p>
-               <?php echo $game['review']?>
+                <?php echo $game['review'] ?>
             </p>
         </section>
+
+        <section class="comments">
+            <h2><span> Comments </span></h2>
+            <?php
+                $username = $_SESSION['username'];
+                $insert = $model->insertComment($id, $username);
+            ?>
+            <form method="POST" action="" class="comment-form">
+                <textarea name="comment" id="comment" required></textarea>
+                <div class="comment-submit">
+                    <span>Commenting as: <span class='commentUsername'><?php echo $_SESSION['username']; ?></span></span>
+                    <button type="submit" class="LoginBtn">Submit</button>
+                </div>
+            </form>
+            <?php
+                $rows = $model->fetchComments($id);
+                $i = 1;
+                if (!empty($rows)) {
+                    foreach ($rows as $row) {
+            ?>
+                    <div class="comment">
+                        <p class="commentDetails"><span><?php echo $row['username']; ?></span> @ <?php echo $row['createdAt']; ?></p>
+                        <p class="commentContent"><?php echo $row['comment'] ?></p>
+                    </div>
+            <?php
+                    }
+                } else {
+                    echo "<center>No comments yet, be the first to comment!</center>";
+                }
+            ?>
+        </section>
+
     </main>
     <footer>
         <div class="footer-container">
@@ -126,38 +158,38 @@ session_start();
             </nav>
         </div>
     </footer>
-    <?php
-    } else {
-        echo '<script>alert("The game doesn\'t exist in our database.")</script>';
-        echo '<script>window.location.href = "/api/pages/index.php"</script>';
-    }
-    if (isset($_SESSION['isAdmin'])) {
-        if ($_SESSION['isAdmin'] === 1) {
-            echo "<script>
+<?php
+            } else {
+                echo '<script>alert("The game doesn\'t exist in our database.")</script>';
+                echo '<script>window.location.href = "/api/pages/index.php"</script>';
+            }
+            if (isset($_SESSION['isAdmin'])) {
+                if ($_SESSION['isAdmin'] === 1) {
+                    echo "<script>
             document.getElementById('dashboardURL').style.visibility = 'visible';
             document.getElementById('dashboardURL').style.display = 'inline';
             </script>";
-        } else {
-            echo "<script>
+                } else {
+                    echo "<script>
             document.getElementById('dashboardURL').style.visibility = 'hidden';
             document.getElementById('dashboardURL').style.display = 'none';
             </script>";
-        }
-    } else {
-        echo "<script>
+                }
+            } else {
+                echo "<script>
             document.getElementById('dashboardURL').style.visibility = 'hidden';
             document.getElementById('dashboardURL').style.display = 'none';
             </script>";
-    }
+            }
 
-    if (isset($_SESSION['username'])) {
-        $username = $_SESSION['username'];
-        echo "<script>
+            if (isset($_SESSION['username'])) {
+                $username = $_SESSION['username'];
+                echo "<script>
         let user = document.getElementById('loggedInUser');
         user.innerText = '$username';
         </script>";
-    }
-    ?>
+            }
+?>
 </body>
 
 </html>

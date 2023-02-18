@@ -222,4 +222,33 @@ class Model
         $result = mysqli_query($this->conn, $query);
         return $result;
     }
+
+    public function fetchComments($gameID)
+    {
+        $data = null;
+        $query = "SELECT * FROM comments WHERE gameID = $gameID ORDER BY createdAt DESC";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $data[] = $row;
+            }
+        }
+        return $data;
+    }
+
+    public function insertComment($gameID, $username)
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+            $comment = $_POST['comment'];
+
+            $query = "INSERT INTO comments(gameID, username, comment) VALUES ('$gameID', '$username', '$comment')";
+            if ($sql = $this->conn->query($query)) {
+                echo "<script>alert('comment has been sent successfully');</script>";
+                // echo "<script>window.location.href = '/api/pages/index.php';</script>";
+            } else {
+                echo "<script>alert('failed');</script>";
+                // echo "<script>window.location.href = '/api/user/index.php';</script>";
+            }
+        }
+    }
 }
