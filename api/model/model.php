@@ -382,7 +382,7 @@ class Model
 
     public function fetchGamesCount()
     {
-        $query = "SELECT COUNT(*) AS total_games FROM games";
+        $query = "SELECT COUNT(*) AS total_games FROM gameslist";
         $result = $this->conn->query($query);
 
         if ($result === false) {
@@ -398,7 +398,7 @@ class Model
 
     public function getMostCommonGameRating()
     {
-        $query = "SELECT gameRating, COUNT(*) as rating_count FROM games GROUP BY gameRating ORDER BY rating_count DESC LIMIT 1";
+        $query = "SELECT gameRating, COUNT(*) as rating_count FROM gameslist GROUP BY gameRating ORDER BY rating_count DESC LIMIT 1";
         if ($sql = $this->conn->query($query)) {
             $row = mysqli_fetch_assoc($sql);
             $most_common_rating = $row['gameRating'];
@@ -425,5 +425,47 @@ class Model
         $total_edits = $row['total_edits'];
 
         return array('username' => $most_active_admin, 'total_edits' => $total_edits);
+    }
+
+    public function editGame($id)
+    {
+
+        $data = null;
+
+        $query = "SELECT * FROM gameslist WHERE id = '$id'";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = $sql->fetch_assoc()) {
+                $data = $row;
+            }
+        }
+        return $data;
+    }
+
+    public function updateGame($data)
+    {
+
+        $gameDescription = mysqli_real_escape_string($this->conn, $data['gameDescription']);
+        $review = mysqli_real_escape_string($this->conn, $data['review']);
+        $developer = mysqli_real_escape_string($this->conn, $data['developer']);
+        $publisher = mysqli_real_escape_string($this->conn, $data['publisher']);
+
+        // $query = "UPDATE gameslist SET id='$data[id]', gameTitle='$data[gameTitle]', gameDescription='$data[gameDescription]', gameRating='$data[gameRating]', imgURL='$data[imgURL]', videoURL='$data[videoURL]', genre='$data[genre]', developer='$data[developer]', publisher='$data[publisher]', platforms='$data[platforms]', screenshots='$data[screenshots]', review='$data[review]', releaseDate='$data[releaseDate]', lastEditBy='$data[lastEditBy]' WHERE gameslist.id='$data[id]'";
+        $query = "UPDATE gameslist SET id='$data[id]', gameTitle='$data[gameTitle]', gameDescription='$gameDescription', gameRating='$data[gameRating]', imageURL='$data[imageURL]', videoURL='$data[videoURL]', genre='$data[genre]', developer='$developer', publisher='$publisher', platforms='$data[platforms]', screenshots='$data[screenshots]', review='$review', releaseDate='$data[releaseDate]', lastEditBy='$data[lastEditBy]' WHERE gameslist.id='$data[id]'";
+
+        if ($sql = $this->conn->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function deleteGame($id)
+    {
+
+        $query = "DELETE FROM gameslist where id = '$id'";
+        if ($sql = $this->conn->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -95,7 +95,7 @@ if ($_SESSION['isAdmin'] !== 1 && $validation !== true) {
               <input type="text" name="username" value="<?php echo $row['username']; ?>" class="form-control" autocomplete="off">
             </div>
             <div class="form-group">
-              <label for="">Password</label>
+              <label for="">Comment</label>
               <input type="text" name="comment" value="<?php echo $row['comment']; ?>" class="form-control" autocomplete="off">
             </div>
             <div class="form-group">

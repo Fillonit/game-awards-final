@@ -115,7 +115,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         <div class="card">
             <h3>Admins</h3>
             <?php
-            echo "<p>$totalAdmins ($adminPercentage%)</p>";
+            echo "<p><span>$totalAdmins</span> ($adminPercentage%)</p>";
             ?>
         </div>
 

@@ -163,7 +163,7 @@ if ($_SESSION['isAdmin'] !== 1) {
             <?php
             $mostCommonRating = $model->getMostCommonGameRating();
             $totalGames = $model->fetchGamesCount();
-            echo "<p>" . $mostCommonRating['gameRating'] . " ($mostCommonRating[percentage]% of $totalGames games) - $mostCommonRating[count] games</p>";
+            echo "<p><span>" . $mostCommonRating['gameRating'] . "</span> ($mostCommonRating[percentage]%) - $mostCommonRating[count]/$totalGames games</p>";
             ?>
         </div>
 
