@@ -180,13 +180,15 @@ session_start();
     </main>
     <footer>
         <div class="footer-container">
-            <p>&copy; Copyright <?php echo date("Y"); ?></p>
+            <p>&copy; <?php echo date("Y"); ?> Noctus</p>
             <nav>
-                <ul>
-                    <li><a href="/api/pages/TOS.php">Terms of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="/api/pages/contact.php">Contact Us</a></li>
-                </ul>
+            <ul>
+                <li><a href="/api/pages/TOS.php">Terms of Use</a></li>
+                <!-- <li><a href="#">Privacy Policy</a></li> -->
+                <li><a href="/api/pages/contact.php">Contact Us</a></li>
+                <li><a href="https://www.linkedin.com/in/fillonit-ibishi/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/Fillonit" target="_blank"><i class="fab fa-github"></i></a></li>
+            </ul>
             </nav>
         </div>
     </footer>

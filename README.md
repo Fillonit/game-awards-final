@@ -37,3 +37,8 @@ Game Ratings and Awards - Project for "Inxhinieria e Web-it"
 - [x] Username in header in pages.
 - [x] Logout to destroy sessions and redirect to homepage
 - [x] Fix and sort file structure
+
+
+## References
+
+- [1]: [Steam](https://store.steampowered.com/)
