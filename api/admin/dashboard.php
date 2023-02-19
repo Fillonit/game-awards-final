@@ -122,12 +122,10 @@ if ($_SESSION['isAdmin'] !== 1) {
         <div class="card">
             <h3>Most Active Admin</h3>
             <?php
-            $mostActiveAdmin = $model->getMostActiveAdmin();
+            $mostActiveAdmin = $model->getMostActiveAdminUsers();
             echo "<p>" . $mostActiveAdmin['username'] . " (" . $mostActiveAdmin['total_edits'] . " edits)</p>";
             ?>
         </div>
-
-
     </div>
     <br />
     <table>

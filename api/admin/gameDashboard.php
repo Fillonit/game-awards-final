@@ -45,7 +45,7 @@ if ($_SESSION['isAdmin'] !== 1) {
     <meta name="twitter:title" content="Nocturne - Game Reviews & Awards">
     <meta name="twitter:description" content="A game review and rating website. We like to rate our favorite games based on what they offer.">
     <meta name="twitter:image" content="http://game-awards.vercel.app/assets/img/noctlogo1.png">
-    
+
     <style>
         table {
             /*   border-collapse: collapse; */
@@ -117,34 +117,67 @@ if ($_SESSION['isAdmin'] !== 1) {
             <h2>Nocturne</h2>
         </a>
         <center>
-        <a href="addUser.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-user-plus"></i>
-                Add a User
-            </button>
-        </a>
-        <a href="addGame.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-gamepad"></i>
-                Add a Game
-            </button>
-        </a>
-        <a href="dashboard.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-users"></i>
-                Users Dashboard
-            </button>
-        </a>
-        <a href="contactDashboard.php">
-            <button class="btn add-btn">
-            <i class="fa-solid fa-address-book"></i>
-                Contact Dashboard
-            </button>
-        </a>
-    </center>
+            <a href="addUser.php">
+                <button class="btn add-btn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add a User
+                </button>
+            </a>
+            <a href="addGame.php">
+                <button class="btn add-btn">
+                    <i class="fa-solid fa-gamepad"></i>
+                    Add a Game
+                </button>
+            </a>
+            <a href="dashboard.php">
+                <button class="btn add-btn">
+                    <i class="fa-solid fa-users"></i>
+                    Users Dashboard
+                </button>
+            </a>
+            <a href="contactDashboard.php">
+                <button class="btn add-btn">
+                    <i class="fa-solid fa-address-book"></i>
+                    Contact Dashboard
+                </button>
+            </a>
+        </center>
         <p><a href="logout.php"><b><?= $_SESSION['username'] ?> <i class="fa-solid fa-right-from-bracket"></i></b></a></p>
     </header>
-        <br>
+    <?php
+    include '../../api/model/model.php';
+    $model = new Model();
+    ?>
+    <br />
+    <div class="card-container">
+        <div class="card">
+            <h3>Most Recent Game</h3>
+            <?php
+            $mostRecentGame = $model->getMostRecentGame();
+            echo "<p>$mostRecentGame</p>";
+            ?>
+        </div>
+
+        <div class="card">
+            <h3>Most Common Rating</h3>
+            <?php
+            $mostCommonRating = $model->getMostCommonGameRating();
+            $totalGames = $model->fetchGamesCount();
+            echo "<p>" . $mostCommonRating['gameRating'] . " ($mostCommonRating[percentage]% of $totalGames games) - $mostCommonRating[count] games</p>";
+            ?>
+        </div>
+
+
+        <div class="card">
+            <h3>Most Active Admin</h3>
+            <?php
+            $mostActiveAdmin = $model->getMostActiveAdminGames();
+            echo "<p><span>" . $mostActiveAdmin['username'] . "</span> (" . $mostActiveAdmin['total_edits'] . " edits)</p>";
+            ?>
+        </div>
+    </div>
+
+    <br />
     <table>
         <tr>
             <th>Title</th>
@@ -163,9 +196,6 @@ if ($_SESSION['isAdmin'] !== 1) {
             <th>Actions</th>
         </tr>
         <?php
-
-        include '../../api/model/model.php';
-        $model = new Model();
         $rows = $model->fetchGames();
         $i = 1;
         if (!empty($rows)) {

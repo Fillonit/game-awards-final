@@ -354,15 +354,76 @@ class Model
         return $total_admins;
     }
 
-    public function getMostActiveAdmin()
-{
-    $query = "SELECT lastEditBy, COUNT(*) as total_edits FROM users GROUP BY lastEditBy ORDER BY total_edits DESC LIMIT 1";
-    if ($sql = $this->conn->query($query)) {
-        $row = mysqli_fetch_assoc($sql);
+    public function getMostActiveAdminUsers()
+    {
+        $query = "SELECT lastEditBy, COUNT(*) as total_edits FROM users GROUP BY lastEditBy ORDER BY total_edits DESC LIMIT 1";
+        if ($sql = $this->conn->query($query)) {
+            $row = mysqli_fetch_assoc($sql);
+            $most_active_admin = $row['lastEditBy'];
+            $total_edits = $row['total_edits'];
+        }
+        return array('username' => $most_active_admin, 'total_edits' => $total_edits);
+    }
+
+    public function getMostRecentGame()
+    {
+        $query = "SELECT * FROM gameslist ORDER BY releaseDate DESC LIMIT 1";
+        $result = $this->conn->query($query);
+
+        if ($result === false) {
+            die("Error executing query: " . $this->conn->error);
+        }
+
+        $row = $result->fetch_assoc();
+        $most_recent_game = $row['gameTitle'];
+
+        return $most_recent_game;
+    }
+
+    public function fetchGamesCount()
+    {
+        $query = "SELECT COUNT(*) AS total_games FROM games";
+        $result = $this->conn->query($query);
+
+        if ($result === false) {
+            die("Error executing query: " . $this->conn->error);
+        }
+
+        $row = $result->fetch_assoc();
+        $total_games = $row['total_games'];
+
+        return $total_games;
+    }
+
+
+    public function getMostCommonGameRating()
+    {
+        $query = "SELECT gameRating, COUNT(*) as rating_count FROM games GROUP BY gameRating ORDER BY rating_count DESC LIMIT 1";
+        if ($sql = $this->conn->query($query)) {
+            $row = mysqli_fetch_assoc($sql);
+            $most_common_rating = $row['gameRating'];
+            $rating_count = $row['rating_count'];
+        }
+        $total_games = $this->fetchGamesCount();
+        $most_common_rating_percentage = round(($rating_count / $total_games) * 100, 2);
+        return array('gameRating' => $most_common_rating, 'count' => $rating_count, 'percentage' => $most_common_rating_percentage);
+    }
+
+
+
+    public function getMostActiveAdminGames()
+    {
+        $query = "SELECT lastEditBy, COUNT(*) as total_edits FROM gameslist GROUP BY lastEditBy ORDER BY total_edits DESC LIMIT 1";
+        $result = $this->conn->query($query);
+
+        if ($result === false) {
+            die("Error executing query: " . $this->conn->error);
+        }
+
+        $row = $result->fetch_assoc();
         $most_active_admin = $row['lastEditBy'];
         $total_edits = $row['total_edits'];
-    }
-    return array('username' => $most_active_admin, 'total_edits' => $total_edits);
-}
 
+        return array('username' => $most_active_admin, 'total_edits' => $total_edits);
+    }
 }
