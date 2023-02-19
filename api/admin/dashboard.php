@@ -108,7 +108,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         <div class="card">
             <h3>Total Users</h3>
             <?php
-            echo "<p>$totalUsers</p>";
+            echo "<p><span>$totalUsers</span></p>";
             ?>
         </div>
 

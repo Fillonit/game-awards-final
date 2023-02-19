@@ -154,7 +154,7 @@ if ($_SESSION['isAdmin'] !== 1) {
             <h3>Most Recent Game</h3>
             <?php
             $mostRecentGame = $model->getMostRecentGame();
-            echo "<p>$mostRecentGame</p>";
+            echo "<p><span>$mostRecentGame</span></p>";
             ?>
         </div>
 
