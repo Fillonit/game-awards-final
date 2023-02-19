@@ -62,7 +62,6 @@ if ($_SESSION['isAdmin'] !== 1) {
 </head>
 
 <body>
-    <!-- Header with website title on the left and username on the right -->
     <header>
     <a href="/api/admin/dashboard.php">
             <h2>Nocturne</h2>
@@ -97,34 +96,6 @@ if ($_SESSION['isAdmin'] !== 1) {
     </header>
 
     <br/>
-
-
-    <!-- <center>
-        <a href="addUser.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-user-plus"></i>
-                Add a User
-            </button>
-        </a>
-        <a href="addGame.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-gamepad"></i>
-                Add a Game
-            </button>
-        </a>
-        <a href="dashboard.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-users"></i>
-                Users Dashboard
-            </button>
-        </a>
-        <a href="contactDashboard.php">
-            <button class="btn add-btn">
-            <i class="fa-solid fa-address-book"></i>
-                Contact Dashboard
-            </button>
-        </a>
-    </center> -->
     <table>
         <tr>
             <th>Username</th>

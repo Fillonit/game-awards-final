@@ -22,13 +22,11 @@ if ($_SESSION['isAdmin'] !== 1) {
 </head>
 
 <body>
-    <!-- Header with website title on the left and username on the right -->
     <header>
     <a href="/api/admin/dashboard.php"><h2>Nocturne</h2></a>
         <p><a href="logout.php"><b><?= $_SESSION['username'] ?> <i class="fa-solid fa-right-from-bracket"></i></b></a></p>
     </header>
 
-    <!-- Table with user details -->
     <div>
         <?php
         include '../../api/model/model.php';

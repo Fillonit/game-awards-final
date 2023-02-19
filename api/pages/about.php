@@ -106,7 +106,6 @@
             <p>Welcome to our website! We are a team of two creators who are passionate about building amazing things.
             </p>
 
-            <!-- Add two cards to display the creators -->
             <div class="card">
                 <!-- <img src="https://xsgames.co/randomusers/assets/avatars/male/20.jpg" alt="Creator 1"> -->
                 <img src="https://cdn.discordapp.com/attachments/900517859699077211/1076217251486760990/image.png" alt="Creator 1">

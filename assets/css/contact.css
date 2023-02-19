@@ -7,13 +7,13 @@
 
 body {
     background-color: #2D323B;
-    /* background: linear-gradient(to top, #434547, #282a2c, #1C1D1F, #151617); */
+
     background-repeat: no-repeat;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
     font-weight: 300;
-    /* text-align: center; */
+
 }
 
 .header {
@@ -29,7 +29,7 @@ body {
 .LoginBtn {
     border: none;
     padding: 0px;
-    /* margin-top: 15px; */
+
     background-color: #11f285;
     color: white;
     font-size: 16px;
@@ -52,7 +52,7 @@ body {
     color: white;
     padding-left: 30px;
     padding-right: 30px;
-    /* vertical-align: middle; */
+
 }
 
 .nav a:hover {
@@ -130,11 +130,7 @@ form {
 }
 
 
-/* textarea,
-input,
-button {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-} */
+
 
 .LoginBtn i {
     vertical-align: middle;

@@ -145,32 +145,6 @@ if ($_SESSION['isAdmin'] !== 1) {
         <p><a href="logout.php"><b><?= $_SESSION['username'] ?> <i class="fa-solid fa-right-from-bracket"></i></b></a></p>
     </header>
         <br>
-    <!-- <center>
-        <a href="addUser.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-user-plus"></i>
-                Add a User
-            </button>
-        </a>
-        <a href="addGame.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-gamepad"></i>
-                Add a Game
-            </button>
-        </a>
-        <a href="dashboard.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-users"></i>
-                Users Dashboard
-            </button>
-        </a>
-        <a href="contactDashboard.php">
-            <button class="btn add-btn">
-            <i class="fa-solid fa-address-book"></i>
-                Contact Dashboard
-            </button>
-        </a>
-    </center> -->
     <table>
         <tr>
             <th>Title</th>

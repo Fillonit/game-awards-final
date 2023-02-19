@@ -51,9 +51,7 @@ main {
     background-image: url("https://cdn.akamai.steamstatic.com/steam/apps/271590/page_bg_generated_v6b.jpg?t=1671485100");
     background-repeat: no-repeat;
     background-position: center;
-    /* Center the image */
     background-repeat: no-repeat;
-    /* Do not repeat the image */
     background-size: cover;
 }
 
