@@ -41,4 +41,4 @@ Game Ratings and Awards - Project for "Inxhinieria e Web-it"
 
 ## References
 
-- [1]: [Steam](https://store.steampowered.com/)
+- [Steam](https://store.steampowered.com/)
