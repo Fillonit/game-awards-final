@@ -315,4 +315,16 @@ class Model
         }
         return false;
     }
+
+    public function getContactMessages()
+    {
+        $data = null;
+        $query = "SELECT * FROM contact";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $data[] = $row;
+            }
+        }
+        return $data;
+    }
 }

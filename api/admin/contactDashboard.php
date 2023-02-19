@@ -64,9 +64,7 @@ if ($_SESSION['isAdmin'] !== 1) {
 <body>
     <!-- Header with website title on the left and username on the right -->
     <header>
-    <a href="/api/admin/dashboard.php">
-            <h2>Nocturne</h2>
-        </a>
+        <a href="/api/admin/dashboard.php"><h2>Nocturne</h2></a>
         <center>
         <a href="addUser.php">
             <button class="btn add-btn">
@@ -98,7 +96,7 @@ if ($_SESSION['isAdmin'] !== 1) {
 
     <br/>
 
-
+    <!-- Table with user details -->
     <!-- <center>
         <a href="addUser.php">
             <button class="btn add-btn">
@@ -108,8 +106,14 @@ if ($_SESSION['isAdmin'] !== 1) {
         </a>
         <a href="addGame.php">
             <button class="btn add-btn">
-                <i class="fa-solid fa-gamepad"></i>
+            <i class="fa-solid fa-gamepad"></i>
                 Add a Game
+            </button>
+        </a>
+        <a href="gameDashboard.php">
+            <button class="btn add-btn">
+            <i class="fa-solid fa-dungeon"></i>
+                Games Dashboard
             </button>
         </a>
         <a href="dashboard.php">
@@ -118,36 +122,28 @@ if ($_SESSION['isAdmin'] !== 1) {
                 Users Dashboard
             </button>
         </a>
-        <a href="contactDashboard.php">
-            <button class="btn add-btn">
-            <i class="fa-solid fa-address-book"></i>
-                Contact Dashboard
-            </button>
-        </a>
     </center> -->
     <table>
         <tr>
-            <th>Username</th>
-            <th>Password</th>
-            <th>isAdmin?</th>
-            <th>Last Edited By</th>
-            <th>Actions</th>
+            <th>Name</th>
+            <th>Message</th>
+            <th>Email</th>
+            <!-- <th>Actions</th> -->
         </tr>
         <?php
 
         include '../../api/model/model.php';
         $model = new Model();
-        $rows = $model->fetch();
+        $rows = $model->getContactMessages();
         $i = 1;
         if (!empty($rows)) {
             foreach ($rows as $row) {
         ?>
                 <tr>
-                    <td><?php echo $row['username']; ?></td>
-                    <td><input type="password" value="<?php echo $row['password']; ?>" onclick="togglePassword(event)" readonly/></td>
-                    <td><?php echo $row['isAdmin']; ?></td>
-                    <td><?php echo $row['lastEditBy']; ?></td>
-                    <td>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['message']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+                    <!-- <td>
                         <a href="edit.php?id=<?php echo $row['id']; ?>">
                             <button class="btn edit-btn">
                                 <i class="fas fa-pencil-alt"></i>
@@ -158,7 +154,7 @@ if ($_SESSION['isAdmin'] !== 1) {
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </a>
-                    </td>
+                    </td> -->
                 </tr>
         <?php
             }
