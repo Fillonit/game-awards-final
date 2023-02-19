@@ -327,4 +327,42 @@ class Model
         }
         return $data;
     }
+
+    public function getTotalUsers()
+    {
+        $query = "SELECT COUNT(*) AS total_users FROM users";
+        $result = $this->conn->query($query);
+
+        if ($result === false) {
+            die("Error executing query: " . $this->conn->error);
+        }
+
+        $row = $result->fetch_assoc();
+        $total_users = $row['total_users'];
+
+        return $total_users;
+    }
+
+
+    public function getTotalAdmins()
+    {
+        $query = "SELECT COUNT(*) AS total_admins FROM users WHERE isAdmin = '1'";
+        if ($sql = $this->conn->query($query)) {
+            $row = mysqli_fetch_assoc($sql);
+            $total_admins = $row['total_admins'];
+        }
+        return $total_admins;
+    }
+
+    public function getMostActiveAdmin()
+{
+    $query = "SELECT lastEditBy, COUNT(*) as total_edits FROM users GROUP BY lastEditBy ORDER BY total_edits DESC LIMIT 1";
+    if ($sql = $this->conn->query($query)) {
+        $row = mysqli_fetch_assoc($sql);
+        $most_active_admin = $row['lastEditBy'];
+        $total_edits = $row['total_edits'];
+    }
+    return array('username' => $most_active_admin, 'total_edits' => $total_edits);
+}
+
 }

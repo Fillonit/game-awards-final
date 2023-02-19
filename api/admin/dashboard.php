@@ -63,39 +63,73 @@ if ($_SESSION['isAdmin'] !== 1) {
 
 <body>
     <header>
-    <a href="/api/admin/dashboard.php">
+        <a href="/api/admin/dashboard.php">
             <h2>Nocturne</h2>
         </a>
         <center>
-        <a href="addUser.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-user-plus"></i>
-                Add a User
-            </button>
-        </a>
-        <a href="addGame.php">
-            <button class="btn add-btn">
-                <i class="fa-solid fa-gamepad"></i>
-                Add a Game
-            </button>
-        </a>
-        <a href="gameDashboard.php">
-            <button class="btn add-btn">
-            <i class="fa-solid fa-dungeon"></i>
-                Games Dashboard
-            </button>
-        </a>
-        <a href="contactDashboard.php">
-            <button class="btn add-btn">
-            <i class="fa-solid fa-address-book"></i>
-                Contact Dashboard
-            </button>
-        </a>
-    </center>
+            <a href="addUser.php">
+                <button class="btn add-btn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add a User
+                </button>
+            </a>
+            <a href="addGame.php">
+                <button class="btn add-btn">
+                    <i class="fa-solid fa-gamepad"></i>
+                    Add a Game
+                </button>
+            </a>
+            <a href="gameDashboard.php">
+                <button class="btn add-btn">
+                    <i class="fa-solid fa-dungeon"></i>
+                    Games Dashboard
+                </button>
+            </a>
+            <a href="contactDashboard.php">
+                <button class="btn add-btn">
+                    <i class="fa-solid fa-address-book"></i>
+                    Contact Dashboard
+                </button>
+            </a>
+        </center>
         <p><a href="logout.php"><b><?= $_SESSION['username'] ?> <i class="fa-solid fa-right-from-bracket"></i></b></a></p>
     </header>
 
-    <br/>
+    <?php
+    include '../../api/model/model.php';
+    $model = new Model();
+    $totalUsers = $model->getTotalUsers();
+    $totalAdmins = $model->getTotalAdmins();
+    $adminPercentage = round(($totalAdmins / $totalUsers) * 100);
+    ?>
+
+    <br />
+    <div class="card-container">
+        <div class="card">
+            <h3>Total Users</h3>
+            <?php
+            echo "<p>$totalUsers</p>";
+            ?>
+        </div>
+
+        <div class="card">
+            <h3>Admins</h3>
+            <?php
+            echo "<p>$totalAdmins ($adminPercentage%)</p>";
+            ?>
+        </div>
+
+        <div class="card">
+            <h3>Most Active Admin</h3>
+            <?php
+            $mostActiveAdmin = $model->getMostActiveAdmin();
+            echo "<p>" . $mostActiveAdmin['username'] . " (" . $mostActiveAdmin['total_edits'] . " edits)</p>";
+            ?>
+        </div>
+
+
+    </div>
+    <br />
     <table>
         <tr>
             <th>Username</th>
@@ -106,8 +140,6 @@ if ($_SESSION['isAdmin'] !== 1) {
         </tr>
         <?php
 
-        include '../../api/model/model.php';
-        $model = new Model();
         $rows = $model->fetch();
         $i = 1;
         if (!empty($rows)) {
@@ -115,7 +147,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         ?>
                 <tr>
                     <td><?php echo $row['username']; ?></td>
-                    <td><input type="password" value="<?php echo $row['password']; ?>" onclick="togglePassword(event)" readonly/></td>
+                    <td><input type="password" value="<?php echo $row['password']; ?>" onclick="togglePassword(event)" readonly /></td>
                     <td><?php echo $row['isAdmin']; ?></td>
                     <td><?php echo $row['lastEditBy']; ?></td>
                     <td>
