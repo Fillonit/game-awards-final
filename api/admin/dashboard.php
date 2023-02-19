@@ -123,7 +123,7 @@ if ($_SESSION['isAdmin'] !== 1) {
             <h3>Most Active Admin</h3>
             <?php
             $mostActiveAdmin = $model->getMostActiveAdminUsers();
-            echo "<p>" . $mostActiveAdmin['username'] . " (" . $mostActiveAdmin['total_edits'] . " edits)</p>";
+            echo "<p><span>" . $mostActiveAdmin['username'] . "</span> (" . $mostActiveAdmin['total_edits'] . " edits)</p>";
             ?>
         </div>
     </div>
