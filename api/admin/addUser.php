@@ -31,7 +31,8 @@ if ($_SESSION['isAdmin'] !== 1) {
         <?php
         include '../../api/model/model.php';
         $model = new Model();
-        $insert = $model->addUser();
+        $lastEditBy = $_SESSION['username'];
+        $insert = $model->addUser($lastEditBy);
         ?>
         <form action="" method="post">
             <div class="form-group">

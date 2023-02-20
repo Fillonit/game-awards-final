@@ -65,6 +65,7 @@ if ($_SESSION['isAdmin'] !== 1) {
                     $data['username'] = $_POST['username'];
                     $data['password'] = $_POST['password'];
                     $data['isAdmin'] = $_POST['isAdmin'];
+                    $data['lastEditBy'] = $_SESSION['username'];
  
                     $update = $model->update($data);
  

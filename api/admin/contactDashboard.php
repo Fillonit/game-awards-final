@@ -102,7 +102,7 @@ if ($_SESSION['isAdmin'] !== 1) {
             <th>Name</th>
             <th>Message</th>
             <th>Email</th>
-            <!-- <th>Actions</th> -->
+            <th>Actions</th>
         </tr>
         <?php
 
@@ -117,18 +117,18 @@ if ($_SESSION['isAdmin'] !== 1) {
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['message']; ?></td>
                     <td><?php echo $row['email']; ?></td>
-                    <!-- <td>
-                        <a href="edit.php?id=<?php echo $row['id']; ?>">
+                    <td>
+                        <!-- <a href="edit.php?id=<?php echo $row['id']; ?>">
                             <button class="btn edit-btn">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
-                        </a>
-                        <a href="delete.php?id=<?php echo $row['id']; ?>">
+                        </a> -->
+                        <a href="deleteContactMessage.php?id=<?php echo $row['id']; ?>">
                             <button class="btn delete-btn">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </a>
-                    </td> -->
+                    </td>
                 </tr>
         <?php
             }

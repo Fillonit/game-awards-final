@@ -82,7 +82,7 @@ class Model
     public function update($data)
     {
 
-        $query = "UPDATE users SET id='$data[id]', username='$data[username]', password='$data[password]', isAdmin='$data[isAdmin]' WHERE users.id='$data[id]'";
+        $query = "UPDATE users SET id='$data[id]', username='$data[username]', password='$data[password]', isAdmin='$data[isAdmin]', lastEditBy='$data[lastEditBy]' WHERE users.id='$data[id]'";
 
         if ($sql = $this->conn->query($query)) {
             return true;
@@ -119,7 +119,7 @@ class Model
         return null;
     }
 
-    public function addUser()
+    public function addUser($lastEditBy)
     {
         if (isset($_POST['submit'])) {
 
@@ -127,7 +127,7 @@ class Model
             $password = $_POST['password'];
             $isAdmin = $_POST['isAdmin'];
 
-            $query = "INSERT INTO users(username, password, isAdmin) VALUES ('$username','$password', '$isAdmin')";
+            $query = "INSERT INTO users(username, password, isAdmin, lastEditBy) VALUES ('$username','$password', '$isAdmin', '$lastEditBy')";
             if ($sql = $this->conn->query($query)) {
                 echo "<script>alert('records added successfully');</script>";
                 echo "<script>window.location.href = '/api/admin/dashboard.php';</script>";
@@ -462,6 +462,17 @@ class Model
     {
 
         $query = "DELETE FROM gameslist where id = '$id'";
+        if ($sql = $this->conn->query($query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deleteContactMessage($id)
+    {
+
+        $query = "DELETE FROM contact where id = '$id'";
         if ($sql = $this->conn->query($query)) {
             return true;
         } else {
