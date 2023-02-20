@@ -133,7 +133,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         <?php
             }
         } else {
-            echo "no data";
+            echo "</table><center><p id='norez'>No records found for the contact form.</p></center>";
         }
         ?>
     </table>

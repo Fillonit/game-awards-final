@@ -231,7 +231,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         <?php
             }
         } else {
-            echo "no data";
+            echo "No game ata available.";
         }
         ?>
     </table>
