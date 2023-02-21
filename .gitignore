@@ -1,0 +1,5 @@
+# Ignore all files inside the .vscode folder
+.vscode/*
+
+# Ignore the .vercel.json file
+.vercel.json
