@@ -96,7 +96,7 @@ session_start();
             <p><?php echo $game['gameDescription']; ?></p>
         </section>
 
-        <h2><span> Screenshots </span></h2>
+        <section><h2><span> Screenshots </span></h2></section>
         <section class="screenshots">
             <?php
                 $screenshots = $game['screenshots'];
@@ -116,18 +116,19 @@ session_start();
             <p>
                 <?php echo $game['review'] ?>
             </p>
+            <h2><span style="font-size: 50px; font-weight: bold;"> Rating: <?php echo $game['gameRating'] ?></span></h2>
         </section>
 
         <section class="comments">
             <h2><span> Comments </span></h2>
             <?php
-            if(!isset($_SESSION['username'])) {
-                // echo "<center>Please login to comment!</center>";
-                // return;
-                $username = 'Anonymous User';
-            } else {
-                $username = $_SESSION['username'];
-            }
+                if (!isset($_SESSION['username'])) {
+                    // echo "<center>Please login to comment!</center>";
+                    // return;
+                    $username = 'Anonymous User';
+                } else {
+                    $username = $_SESSION['username'];
+                }
                 $insert = $model->insertComment($id, $username);
             ?>
             <form method="POST" action="" class="comment-form">
@@ -141,7 +142,7 @@ session_start();
             <?php
                 $rows = $model->fetchComments($id);
                 $i = 1;
-                if(!isset($_SESSION['isAdmin'])) {
+                if (!isset($_SESSION['isAdmin'])) {
                     // echo "<center>Please login to comment!</center>";
                     // return;
                     $isAdmin = 0;
@@ -182,13 +183,13 @@ session_start();
         <div class="footer-container">
             <p>&copy; <?php echo date("Y"); ?> Nocturne</p>
             <nav>
-            <ul>
-                <li><a href="/api/pages/TOS.php">Terms of Use</a></li>
-                <!-- <li><a href="#">Privacy Policy</a></li> -->
-                <li><a href="/api/pages/contact.php">Contact Us</a></li>
-                <li><a href="https://www.linkedin.com/in/fillonit-ibishi/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/Fillonit" target="_blank"><i class="fab fa-github"></i></a></li>
-            </ul>
+                <ul>
+                    <li><a href="/api/pages/TOS.php">Terms of Use</a></li>
+                    <!-- <li><a href="#">Privacy Policy</a></li> -->
+                    <li><a href="/api/pages/contact.php">Contact Us</a></li>
+                    <li><a href="https://www.linkedin.com/in/fillonit-ibishi/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/Fillonit" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
             </nav>
         </div>
     </footer>
