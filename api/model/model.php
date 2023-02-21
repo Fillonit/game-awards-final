@@ -154,9 +154,9 @@ class Model
     {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-            $name = $_POST['name'];
+            $name = mysqli_real_escape_string($this->conn, $_POST['name']);
             $email = $_POST['email'];
-            $message = $_POST['message'];
+            $message = mysqli_real_escape_string($this->conn, $_POST['message']);
 
             if (empty($name) || empty($message) || empty($email)) {
                 echo "Please fill all the fields.";
