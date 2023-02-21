@@ -45,7 +45,7 @@ class Model
     public function fetch()
     {
         $data = null;
-        $query = "SELECT * FROM users";
+        $query = "SELECT * FROM users ORDER BY isAdmin DESC";
         if ($sql = $this->conn->query($query)) {
             while ($row = mysqli_fetch_assoc($sql)) {
                 $data[] = $row;

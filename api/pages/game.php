@@ -180,7 +180,7 @@ session_start();
     </main>
     <footer>
         <div class="footer-container">
-            <p>&copy; <?php echo date("Y"); ?> Noctus</p>
+            <p>&copy; <?php echo date("Y"); ?> Nocturne</p>
             <nav>
             <ul>
                 <li><a href="/api/pages/TOS.php">Terms of Use</a></li>

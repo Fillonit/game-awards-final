@@ -112,10 +112,11 @@ if ($_SESSION['isAdmin'] !== 1) {
 </head>
 
 <body>
-    <header>
-        <a href="/api/admin/dashboard.php">
+    <header style="height: 30px;">
+        <!-- <a href="/api/pages/index.php">
             <h2>Nocturne</h2>
-        </a>
+        </a> -->
+        <a href="/api/pages/index.php" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
         <center>
             <a href="addUser.php">
                 <button class="btn add-btn">

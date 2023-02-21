@@ -62,10 +62,11 @@ if ($_SESSION['isAdmin'] !== 1) {
 </head>
 
 <body>
-    <header>
-        <a href="/api/admin/dashboard.php">
+    <header style="height: 30px;">
+        <!-- <a href="/api/pages/index.php">
             <h2>Nocturne</h2>
-        </a>
+        </a> -->
+        <a href="/api/pages/index.php" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
         <center>
             <a href="addUser.php">
                 <button class="btn add-btn">
@@ -106,21 +107,21 @@ if ($_SESSION['isAdmin'] !== 1) {
     <br />
     <div class="card-container">
         <div class="card">
-            <h3>Total Users</h3>
+            <h3><i class="fa-solid fa-users"></i> Total Users </h3>
             <?php
-            echo "<p><span>$totalUsers</span></p>";
+            echo "<p><span>$totalUsers</span> users</p>";
             ?>
         </div>
 
         <div class="card">
-            <h3>Admins</h3>
+            <h3><i class="fa-solid fa-user-shield"></i> Admins </h3>
             <?php
             echo "<p><span>$totalAdmins</span> ($adminPercentage%)</p>";
             ?>
         </div>
 
         <div class="card">
-            <h3>Most Active Admin</h3>
+            <h3><i class="fa-solid fa-chart-line"></i> Most Active Admin </h3>
             <?php
             $mostActiveAdmin = $model->getMostActiveAdminUsers();
             echo "<p><span>" . $mostActiveAdmin['username'] . "</span> (" . $mostActiveAdmin['total_edits'] . " edits)</p>";

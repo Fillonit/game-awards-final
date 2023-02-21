@@ -167,12 +167,21 @@ tr:nth-child(odd) {
 .card p span {
     color: #0eca6f;
 }
+
 .card h3 {
     font-size: 28px;
     padding: 0;
     margin: 0;
 }
+
 #norez {
     color: white;
     font-size: 20px;
+}
+
+.logo,
+.logo img {
+    text-decoration: none;
+    color: #11f285;
+    height: 40px;
 }
