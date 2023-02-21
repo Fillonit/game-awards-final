@@ -183,11 +183,11 @@ session_start();
         let user = document.getElementById('loggedInUser');
         user.innerText = '$username';
         let LoginBtn = document.getElementById('LoginBtn');
-        LoginBtn.setAttribute('title', 'Log Out');
+        LoginBtn.setAttribute('title', 'Edit Profile');
         </script>";
         echo "<script>
         let loginLink = document.getElementById('loginLink');
-        loginLink.href = '/api/user/logout.php';
+        loginLink.href = '/api/user/editProfile.php';
         </script>";
     } else {
         echo "<script>

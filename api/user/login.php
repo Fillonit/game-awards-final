@@ -26,10 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (mysqli_num_rows($result) > 0) {
         if ($row["isAdmin"] == 0) {
             $_SESSION["username"] = $username;
+            $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 0;
-            echo "<script>window.location.href = '/';</script>";
+            echo "<script>window.location.href = '/api/pages/index.php';</script>";
         } elseif ($row["isAdmin"] == 1) {
             $_SESSION["username"] = $username;
+            $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 1;
             header("location:/api/admin/dashboard.php");
         }

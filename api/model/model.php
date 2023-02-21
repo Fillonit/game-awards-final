@@ -18,6 +18,42 @@ class Model
 
     //INSERT, FETCH, EDIT, DELETE
 
+
+    public function editUserCredentials($username, $userID, $newUsername, $newPassword)
+{
+    if ($username !== $newUsername) {
+        if ($this->userExists($newUsername)) {
+            echo "<script>alert('Username already exists');</script>";
+            return false;
+        }
+    }
+
+    // update user credentials in database
+    $query = "UPDATE users SET username = '$newUsername', password = '$newPassword', lastEditBy = '$username' WHERE id = '$userID'";
+    if ($result = $this->conn->query($query)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+    public function userExists($username)
+    {
+        $query = "SELECT COUNT(*) as user_count FROM users WHERE username = '$username'";
+        $result = $this->conn->query($query);
+
+        if ($result === false) {
+            die("Error executing query: " . $this->conn->error);
+        }
+
+        $row = $result->fetch_assoc();
+        $user_count = $row['user_count'];
+
+        return ($user_count > 0);
+    }
+
+
     public function insert()
     {
         // if(isset($_POST['submit'])){

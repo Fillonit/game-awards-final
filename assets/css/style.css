@@ -469,3 +469,11 @@ footer {
 .LoginBtn {
     color: #1C1D1F;
 }
+
+#LoginBtn {
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
