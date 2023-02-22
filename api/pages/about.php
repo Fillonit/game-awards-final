@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,17 +10,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nocturne - Game Reviews & Awards</title>
 
-    <link rel="shortcut icon" href="assets/img/nocticon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="contact.css"> -->
+    <!-- HTML Meta Tags -->
+    <meta name="description" content="A game review and rating website. We like to rate our favorite games based on what they offer.">
+    <meta name="theme-color" content="#11f285">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Nocturne - Game Reviews & Awards">
+    <meta itemprop="description" content="A game review and rating website. We like to rate our favorite games based on what they offer.">
+    <meta itemprop="image" content="http://game-awards.vercel.app/assets/img/noctlogo1.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://game-awards.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nocturne - Game Reviews & Awards">
+    <meta property="og:description" content="A game review and rating website. We like to rate our favorite games based on what they offer.">
+    <meta property="og:image" content="http://game-awards.vercel.app/assets/img/noctlogo1.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nocturne - Game Reviews & Awards">
+    <meta name="twitter:description" content="A game review and rating website. We like to rate our favorite games based on what they offer.">
+    <meta name="twitter:image" content="http://game-awards.vercel.app/assets/img/noctlogo1.png">
+
+
+    <link rel="shortcut icon" href="../../assets/img/nocticon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../assets/js/script.js" defer></script>
 </head>
 
 <body>
     <div class="header">
         <!-- <img src="" alt="" class="logo"> -->
+        <!-- <a href="/" class="logo"><h1 class="logo">Nocturne</h1></a> -->
         <a href="/api/pages/index.php" class="logo"><img src="../../assets/img/noctlogo1.png" alt="Nocturne"></a>
         <div class="nav">
             <a href="/api/pages/index.php">Home</a>
@@ -27,7 +52,7 @@
             <a href="/api/admin/dashboard.php" id="dashboardURL">Dashboard</a>
         </div>
 
-        <a href="/api/user/login.php"><button class="LoginBtn" id="LoginBtn"><span id="loggedInUser">Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
+        <a href="/api/user/login.php" id="loginLink"><button class="LoginBtn" id="LoginBtn"><span id="loggedInUser">Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></button></a>
     </div>
     <style>
         body {
@@ -58,6 +83,7 @@
         .card p {
             padding: 10px 20px;
         }
+
         body {
             background-color: #1c1c1c;
             color: white;
@@ -71,8 +97,8 @@
 
         p {
             font-size: 20px;
-            margin-top: 40px;
-            margin-bottom: 40px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .card {
@@ -86,6 +112,7 @@
             text-align: left;
             vertical-align: top;
         }
+
         .card img {
             border-radius: 5px 5px 0px 0px;
             width: 100%;
@@ -95,7 +122,16 @@
 
         .card p {
             font-size: 16px;
-            padding: 10px;
+        }
+
+        .card {
+            text-align: center;
+        }
+
+        .card strong {
+            font-size: 30px;
+            padding: 0;
+            margin: 0;
         }
     </style>
     </head>
@@ -106,22 +142,68 @@
             <p>Welcome to our website! We are a team of two creators who are passionate about building amazing things.
             </p>
 
-            <div class="card">
-                <!-- <img src="https://xsgames.co/randomusers/assets/avatars/male/20.jpg" alt="Creator 1"> -->
-                <img src="https://cdn.discordapp.com/attachments/900517859699077211/1076217251486760990/image.png" alt="Creator 1">
-                <p><strong>Fillonit Ibishi</strong></p>
-                <p>Creator 1 is a talented software developer with a passion for building innovative solutions. He has a
-                    wealth of experience in the tech industry and is always looking for new challenges.</p>
-            </div>
-            <div class="card">
-                <!-- <img src="https://xsgames.co/randomusers/assets/avatars/male/21.jpg" alt="Creator 2"> -->
-                <img src="https://cdn.discordapp.com/attachments/966126234075561994/1076163955665412156/image.png" alt="Creator 2">
-                <p><strong>Drin Vitia</strong></p>
-                <p>Creator 2 is a talented software developer with a passion for building innovative solutions. He has a
-                    wealth of experience in the tech industry and is always looking for new challenges.</p>
-            </div>
-        </main>
+            <?php
 
+            include '../../api/model/model.php';
+            $model = new Model();
+            $rows = $model->getAuthors();
+            $i = 1;
+            if (!empty($rows)) {
+                foreach ($rows as $row) {
+            ?>
+                    <div class="card">
+                        <!-- <img src="https://xsgames.co/randomusers/assets/avatars/male/20.jpg" alt="Creator 1"> -->
+                        <img src="<?php echo $row['imgURL'] ?>" alt="Creator 1">
+                        <p><strong><?php echo $row['name'] ?></strong></p>
+                        <p><?php echo $row['name'];
+                            echo $row['bio'] ?></p>
+                    </div>
+            <?php
+                }
+            } else {
+                echo "no data";
+            }
+            ?>
+        </main>
+        <?php
+        if (isset($_SESSION['isAdmin'])) {
+            if ($_SESSION['isAdmin'] === 1) {
+                echo "<script>
+            document.getElementById('dashboardURL').style.visibility = 'visible';
+            document.getElementById('dashboardURL').style.display = 'inline';
+            </script>";
+            } else {
+                echo "<script>
+            document.getElementById('dashboardURL').style.visibility = 'hidden';
+            document.getElementById('dashboardURL').style.display = 'none';
+            </script>";
+            }
+        } else {
+            echo "<script>
+            document.getElementById('dashboardURL').style.visibility = 'hidden';
+            document.getElementById('dashboardURL').style.display = 'none';
+            </script>";
+        }
+
+        if (isset($_SESSION['username'])) {
+            $username = $_SESSION['username'];
+            echo "<script>
+        let user = document.getElementById('loggedInUser');
+        user.innerText = '$username';
+        let LoginBtn = document.getElementById('LoginBtn');
+        LoginBtn.setAttribute('title', 'Edit Profile');
+        </script>";
+            echo "<script>
+        let loginLink = document.getElementById('loginLink');
+        loginLink.href = '/api/user/editProfile.php';
+        </script>";
+        } else {
+            echo "<script>
+        let LoginBtn = document.getElementById('LoginBtn');
+        LoginBtn.setAttribute('title', 'Log In');
+        </script>";
+        }
+        ?>
     </body>
 
 </html>
