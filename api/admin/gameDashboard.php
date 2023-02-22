@@ -152,7 +152,7 @@ if ($_SESSION['isAdmin'] !== 1) {
     <br />
     <div class="card-container">
         <div class="card">
-            <h3>Most Recent Game</h3>
+            <h3><i class="fa-solid fa-gamepad"></i> Most Recent Game</h3>
             <?php
             $mostRecentGame = $model->getMostRecentGame();
             echo "<p><span>$mostRecentGame</span></p>";
@@ -160,7 +160,7 @@ if ($_SESSION['isAdmin'] !== 1) {
         </div>
 
         <div class="card">
-            <h3>Most Common Rating</h3>
+            <h3><i class="fa-solid fa-repeat"></i> Most Common Rating</h3>
             <?php
             $mostCommonRating = $model->getMostCommonGameRating();
             $totalGames = $model->fetchGamesCount();
@@ -170,7 +170,7 @@ if ($_SESSION['isAdmin'] !== 1) {
 
 
         <div class="card">
-            <h3>Most Active Admin</h3>
+            <h3><i class="fa-solid fa-user-shield"></i> Most Active Admin</h3>
             <?php
             $mostActiveAdmin = $model->getMostActiveAdminGames();
             echo "<p><span>" . $mostActiveAdmin['username'] . "</span> (" . $mostActiveAdmin['total_edits'] . " edits)</p>";

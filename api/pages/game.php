@@ -120,7 +120,7 @@ session_start();
         </section>
 
         <section class="comments">
-            <h2><span> Comments </span></h2>
+            <h2><span> Comments <i class="fa-regular fa-comments"></i></span></h2>
             <?php
                 if (!isset($_SESSION['username'])) {
                     // echo "<center>Please login to comment!</center>";
@@ -136,7 +136,7 @@ session_start();
                 <input type="hidden" name="previous_url" value="/api/pages/game.php?id=<?php echo $id ?>">
                 <div class="comment-submit">
                     <span>Commenting as: <span class='commentUsername'><?php echo $username; ?></span></span>
-                    <button type="submit" class="LoginBtn">Submit</button>
+                    <button type="submit" class="LoginBtn">Submit </button>
                 </div>
             </form>
             <?php
