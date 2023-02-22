@@ -29,7 +29,7 @@ class Model
     }
 
     // update user credentials in database
-    $query = "UPDATE users SET username = '$newUsername', password = '$newPassword', lastEditBy = '$username' WHERE id = '$userID'";
+    $query = "UPDATE users SET username = '$newUsername', password = '$newPassword', lastEditBy = '$newUsername' WHERE id = '$userID'";
     if ($result = $this->conn->query($query)) {
         return true;
     } else {
@@ -178,6 +178,18 @@ class Model
     {
         $data = null;
         $query = "SELECT * FROM gamesList";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $data[] = $row;
+            }
+        }
+        return $data;
+    }
+
+    public function getFeaturedGames()
+    {
+        $data = null;
+        $query = "SELECT * FROM gamesList LIMIT 8";
         if ($sql = $this->conn->query($query)) {
             while ($row = mysqli_fetch_assoc($sql)) {
                 $data[] = $row;

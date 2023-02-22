@@ -122,7 +122,7 @@ session_start();
 
             include '../../api/model/model.php';
             $model = new Model();
-            $rows = $model->getGames();
+            $rows = $model->getFeaturedGames();
             $i = 1;
             if (!empty($rows)) {
                 foreach ($rows as $row) {
