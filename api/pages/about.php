@@ -155,7 +155,7 @@ session_start();
                         <!-- <img src="https://xsgames.co/randomusers/assets/avatars/male/20.jpg" alt="Creator 1"> -->
                         <img src="<?php echo $row['imgURL'] ?>" alt="Creator 1">
                         <p><strong><?php echo $row['name'] ?></strong></p>
-                        <p><?php echo $row['name'];
+                        <p><?php echo $row['name']; echo " ";
                             echo $row['bio'] ?></p>
                     </div>
             <?php
