@@ -159,3 +159,20 @@ form {
         padding-top: 2px;
     }
 }
+form {
+    border-radius: 0px;
+    background-color: #1C1D1F;
+}
+
+.form-control {
+    border-radius: 0px;
+}
+.btn-primary {
+    border-radius: 0px !important;
+    background-color: #11f285 !important;
+    color: #1C1D1F !important;
+}
+#bigText {
+    font-size: 40px;
+    text-align: center;
+}
