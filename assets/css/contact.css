@@ -7,7 +7,6 @@
 
 body {
     background-color: #2D323B;
-
     background-repeat: no-repeat;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -113,7 +112,7 @@ form {
 #bigText {
     text-align: center;
     vertical-align: center;
-    margin-top: 25vh;
+    margin-top: 20vh;
 }
 
 .map {
