@@ -156,3 +156,6 @@ body {
 .container {
     box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 20px;
 }
+input:focus {
+    outline: none;
+}

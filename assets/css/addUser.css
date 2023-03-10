@@ -107,3 +107,6 @@ p a {
 header a {
     text-decoration: none;
 }
+input:focus {
+    outline: none;
+}

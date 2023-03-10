@@ -477,3 +477,7 @@ footer {
     text-overflow: ellipsis;
     max-width: 120px;
 }
+
+input:focus {
+    outline: none;
+}

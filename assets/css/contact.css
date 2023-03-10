@@ -175,3 +175,6 @@ form {
     font-size: 40px;
     text-align: center;
 }
+input:focus {
+    outline: none;
+}
