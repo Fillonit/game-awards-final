@@ -56,7 +56,20 @@ session_start();
     </div>
     <div class="slideshow-container">
 
-        <div class="mySlides fade">
+        <?php
+        include '../../api/model/model.php';
+        $model = new Model();
+        $sliderDB = $model->getSliderImages();
+        foreach ($sliderDB as $slide) { ?>
+            <div class="mySlides fade">
+                <img src="<?php echo $slide['imgURL'] ?>" style="width:100%" alt="sliderImage">
+                <div class="text"><?php echo $slide['title'] ?></div>
+            </div>
+        <?php
+        }
+        ?>
+
+        <!-- <div class="mySlides fade">
             <img src="https://cdn11.bigcommerce.com/s-1lneulkq0h/product_images/uploaded_images/ac-valhalla-landing-page-1920-x-500.png" style="width:100%" alt="sliderImage">
             <div class="text">ASSASSIN'S CREED: VALHALLA</div>
         </div>
@@ -69,7 +82,7 @@ session_start();
         <div class="mySlides fade">
             <img src="https://preview.redd.it/r8ndjrgvgil41.png?auto=webp&s=9fbeb6d863c1e7189eb71a1aef94e5649be86a25" style="width:100%" alt="sliderImage">
             <div class="text">Hitman Absolution</div>
-        </div>
+        </div> -->
 
         <a class="prev" onclick="plusSlides(-1)">❮</a>
         <a class="next" onclick="plusSlides(1)">❯</a>
@@ -120,8 +133,6 @@ session_start();
         <div class="topRatedGames">
             <?php
 
-            include '../../api/model/model.php';
-            $model = new Model();
             $rows = $model->getFeaturedGames();
             $i = 1;
             if (!empty($rows)) {
@@ -133,7 +144,7 @@ session_start();
                     <span class=" title"><?php echo $row['gameTitle']; ?></span>
                         </h1>
                         <h2 class="gameRating""><?php echo $row['gameRating']; ?></h2>
-                    <a href="/api/pages/game.php?id=<?php echo $row['id']; ?>"><button class="gameButton">Open Review</button></a>
+                    <a href=" /api/pages/game.php?id=<?php echo $row['id']; ?>"><button class="gameButton">Open Review</button></a>
                     </div>
             <?php
                 }
@@ -147,13 +158,13 @@ session_start();
         <div class="footer-container">
             <p>&copy; <?php echo date("Y"); ?> Nocturne</p>
             <nav>
-            <ul>
-                <li><a href="/api/pages/TOS.php">Terms of Use</a></li>
-                <!-- <li><a href="#">Privacy Policy</a></li> -->
-                <li><a href="/api/pages/contact.php">Contact Us</a></li>
-                <li><a href="https://www.linkedin.com/in/fillonit-ibishi/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/Fillonit" target="_blank"><i class="fab fa-github"></i></a></li>
-            </ul>
+                <ul>
+                    <li><a href="/api/pages/TOS.php">Terms of Use</a></li>
+                    <!-- <li><a href="#">Privacy Policy</a></li> -->
+                    <li><a href="/api/pages/contact.php">Contact Us</a></li>
+                    <li><a href="https://www.linkedin.com/in/fillonit-ibishi/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/Fillonit" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
             </nav>
         </div>
     </footer>
@@ -177,7 +188,7 @@ session_start();
             </script>";
     }
 
-    if(isset($_SESSION['username'])) {
+    if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
         echo "<script>
         let user = document.getElementById('loggedInUser');

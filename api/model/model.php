@@ -539,4 +539,16 @@ class Model
         }
         return $data;
     }
+
+    public function getSliderImages()
+    {
+        $data = null;
+        $query = "SELECT * FROM slider ORDER BY id ASC";
+        if ($sql = $this->conn->query($query)) {
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $data[] = $row;
+            }
+        }
+        return $data;
+    }
 }
