@@ -1,5 +1,5 @@
 function exitLogin() {
-    window.location.href = "/";
+    window.location.href = "/api/pages/index.php";
 }
 
 function inputFocus() {
