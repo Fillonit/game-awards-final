@@ -94,7 +94,7 @@ if ($_SESSION['isAdmin'] !== 1) {
             </a>
 
         </center>
-        <p><a href="logout.php"><b><?= $_SESSION['username'] ?> <i class="fa-solid fa-right-from-bracket"></i></b></a></p>
+        <p><a href="../user/logout.php"><b><?= $_SESSION['username'] ?> <i class="fa-solid fa-right-from-bracket"></i></b></a></p>
     </header>
 
     <br />
