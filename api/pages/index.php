@@ -92,8 +92,8 @@ session_start();
 
     <div style="text-align:center">
     <?php
-        foreach ($sliderDB as $slide) { ?>
-            <span class="dot" onclick="currentSlide(1)"></span>
+        foreach ($sliderDB as $key => $slide) { ?>
+            <span class="dot" onclick="currentSlide(<?php echo $key+ 1 ?>)"></span>
         <?php
         }
     ?>

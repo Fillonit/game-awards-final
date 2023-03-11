@@ -190,5 +190,5 @@ input:focus {
 }
 b:hover {
     color: #11f285;
-    transition: color 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: color 0.2s ease-in-out;
 }

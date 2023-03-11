@@ -16,26 +16,23 @@ class Model
         }
     }
 
-    //INSERT, FETCH, EDIT, DELETE
-
-
     public function editUserCredentials($username, $userID, $newUsername, $newPassword)
-{
-    if ($username !== $newUsername) {
-        if ($this->userExists($newUsername)) {
-            echo "<script>alert('Username already exists');</script>";
+    {
+        if ($username !== $newUsername) {
+            if ($this->userExists($newUsername)) {
+                echo "<script>alert('Username already exists');</script>";
+                return false;
+            }
+        }
+
+        // update user credentials in database
+        $query = "UPDATE users SET username = '$newUsername', password = '$newPassword', lastEditBy = '$newUsername' WHERE id = '$userID'";
+        if ($result = $this->conn->query($query)) {
+            return true;
+        } else {
             return false;
         }
     }
-
-    // update user credentials in database
-    $query = "UPDATE users SET username = '$newUsername', password = '$newPassword', lastEditBy = '$newUsername' WHERE id = '$userID'";
-    if ($result = $this->conn->query($query)) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
 
     public function userExists($username)
