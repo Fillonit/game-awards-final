@@ -5,9 +5,9 @@ if(isset($_SESSION['username'])){
     echo "<script>window.location.href = '/api/pages/index.php';</script>";
 }
 
-$server = 'localhost';
-$username = 'root';
-$password = '';
+$server = 'db4free.net';
+$username = 'mrdudeguy';
+$password = 'E\%C_XB"~)mTB=9z';
 $database = 'gameawards';
 $conn;
 $data = mysqli_connect($server, $username, $password, $database);

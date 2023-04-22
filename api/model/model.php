@@ -1,9 +1,9 @@
 <?php
 class Model
 {
-    private $server = 'localhost';
-    private $username = 'root';
-    private $password = '';
+    private $server = 'db4free.net';
+    private $username = 'mrdudeguy';
+    private $password = 'E\%C_XB"~)mTB=9z';
     private $database = 'gameawards';
     private $conn;
 
