@@ -2,9 +2,9 @@
 class Model
 {
     private $server = 'db4free.net';
-    private $username = 'mrdudeguy';
-    private $password = 'E\%C_XB"~)mTB=9z';
-    private $database = 'gameawards';
+    private $username = 'adminnocturne';
+    private $password = '!es27MiQfAaWb_k';
+    private $database = 'gamingawards';
     private $conn;
 
     public function __construct()
