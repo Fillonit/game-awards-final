@@ -13,7 +13,7 @@ Game Ratings and Awards - Project for "Inxhinieria e Web-it"
 
 - [Github Repo](https://github.com/Fillonit/game-awards)
 - [Nocturne on Netlify](https://game-awards.netlify.app/)
-- [Nocturne on Vercel](https://game-awards.vercel.app/)
+- [Nocturne on Vercel](https://game-awards-final.vercel.app/)
 - [Noctune on Github Pages](https://fillonit.github.io/game-awards/)
 
 
