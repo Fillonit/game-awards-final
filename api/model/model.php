@@ -1,10 +1,10 @@
 <?php
 class Model
 {
-    private $server = 'db4free.net';
-    private $username = 'adminnocturne';
-    private $password = '!es27MiQfAaWb_k';
-    private $database = 'gamingawards';
+    private $server = "db4free.net";
+    private $username = "adminnocturne";
+    private $password = "!es27MiQfAaWb_k";
+    private $database = "gamingawards";
     private $conn;
 
     public function __construct()
