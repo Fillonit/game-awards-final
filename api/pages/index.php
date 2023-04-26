@@ -57,7 +57,7 @@ session_start();
     <div class="slideshow-container">
 
         <?php
-        include '../model/model.php';
+        include 'model/model.php';
         
         $model = new Model();
         $sliderDB = $model->getSliderImages();
