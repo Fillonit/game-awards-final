@@ -63,7 +63,8 @@ session_start();
     <main>
         <div class="game-container">
             <?php
-            include "../../api/model/model.php";
+            // include "../../api/model/model.php";
+            require_once(__DIR__ . '/../model/model.php');
             $model = new Model();
             $id = $_GET['id'];
             if (!isset($_GET['id'])) {

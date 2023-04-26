@@ -53,7 +53,8 @@ if ($_SESSION['isAdmin'] !== 1) {
       <div class="row">
         <div class="col-md-5 mx-auto">
           <?php
-              include '../../api/model/model.php';
+              // include '../../api/model/model.php';
+              require_once(__DIR__ . '/../model/model.php');
               $model = new Model();
               $id = $_REQUEST['id'];
               $row = $model->edit($id);

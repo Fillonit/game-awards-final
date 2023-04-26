@@ -97,7 +97,8 @@ if ($_SESSION['isAdmin'] !== 1) {
     </header>
 
     <?php
-    include '../../api/model/model.php';
+    // include '../../api/model/model.php';
+    require_once(__DIR__ . '/../model/model.php');
     $model = new Model();
     $totalUsers = $model->getTotalUsers();
     $totalAdmins = $model->getTotalAdmins();

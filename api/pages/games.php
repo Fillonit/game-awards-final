@@ -61,7 +61,9 @@ session_start();
         <div class="topRatedGames">
             <?php
 
-            include '../../api/model/model.php';
+            // include '../../api/model/model.php';
+            require_once(__DIR__ . '/../model/model.php');
+
             $model = new Model();
             $rows = $model->getGames();
             $i = 1;

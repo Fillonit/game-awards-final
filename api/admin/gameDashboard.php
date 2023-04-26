@@ -146,7 +146,8 @@ if ($_SESSION['isAdmin'] !== 1) {
         <p><a href="../user/logout.php"><b><?= $_SESSION['username'] ?> <i class="fa-solid fa-right-from-bracket"></i></b></a></p>
     </header>
     <?php
-    include '../../api/model/model.php';
+    // include '../../api/model/model.php';
+    require_once(__DIR__ . '/../model/model.php');
     $model = new Model();
     ?>
     <br />

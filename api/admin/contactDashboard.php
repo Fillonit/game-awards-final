@@ -107,7 +107,8 @@ if ($_SESSION['isAdmin'] !== 1) {
         </tr>
         <?php
 
-        include '../../api/model/model.php';
+        // include '../../api/model/model.php';
+        require_once(__DIR__ . '/../model/model.php');
         $model = new Model();
         $rows = $model->getContactMessages();
         $i = 1;

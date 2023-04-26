@@ -37,7 +37,8 @@ session_start();
     </div>
     <h1 id="bigText">Contact Us</h1>
     <?php
-    include '../../api/model/model.php';
+    // include '../../api/model/model.php';
+    require_once(__DIR__ . '/../model/model.php');
     $model = new Model();
     $insert = $model->contactMail();
     ?>

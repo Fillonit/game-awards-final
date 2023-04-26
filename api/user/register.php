@@ -1,5 +1,6 @@
 <?php
-include '../../api/model/model.php';
+// include '../../api/model/model.php';
+require_once(__DIR__ . '/../model/model.php');
 $model = new Model();
 $username = $_POST['username'];
 $password = $_POST['password'];

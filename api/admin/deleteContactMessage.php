@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-include '../../api/model/model.php';
+// include '../../api/model/model.php';
+require_once(__DIR__ . '/../model/model.php');
 $model = new Model();
 $id = $_REQUEST['id'];
 

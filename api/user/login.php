@@ -5,10 +5,10 @@ if(isset($_SESSION['username'])){
     echo "<script>window.location.href = '/api/pages/index.php';</script>";
 }
 
-$server = 'db4free.net';
-$username = 'mrdudeguy';
-$password = 'E\%C_XB"~)mTB=9z';
-$database = 'gameawards';
+$server = "db4free.net";
+$username = "adminnocturne";
+$password = "!es27MiQfAaWb_k";
+$database = "gamingawards";
 $conn;
 $data = mysqli_connect($server, $username, $password, $database);
 
