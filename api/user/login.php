@@ -36,12 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 0;
+            echo($_SESSION['username']);
             header("Location: /api/pages/index.php");
             exit();
         } elseif ($row["isAdmin"] == 1) {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 1;
+            echo($_SESSION['username']);
             header("Location: /api/admin/dashboard.php");
             exit();
         }
