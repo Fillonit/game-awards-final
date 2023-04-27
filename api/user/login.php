@@ -27,17 +27,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $row = mysqli_fetch_array($result);
 
+    sleep(1);
+
     if (mysqli_num_rows($result) > 0) {
         if ($row["isAdmin"] == 0) {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 0;
-            echo "<script>window.location.href = '/api/pages/index.php';</script>";
+            sleep(3);
+            // echo "<script>window.location.href = '/api/pages/index.php';</script>";
+            header("location:/api/page/index.php");
+            exit();
         } elseif ($row["isAdmin"] == 1) {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 1;
+            sleep(3);
             header("location:/api/admin/dashboard.php");
+            exit();
         }
     } else {
         echo "<script>alert('Incorrect username or password');</script>";
