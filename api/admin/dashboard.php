@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username'])) {
-    header("Location: /api/user/login.php");
-}
+// if (!isset($_SESSION['username'])) {
+//     header("Location: /api/user/login.php");
+// }
 
-if ($_SESSION['isAdmin'] !== 1) {
-    echo "<script>window.location.href = '/api/pages/index.php';</script>";
-}
+// if ($_SESSION['isAdmin'] !== 1) {
+//     echo "<script>window.location.href = '/api/pages/index.php';</script>";
+// }
 
 ?>
 
