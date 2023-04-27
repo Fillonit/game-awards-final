@@ -1,9 +1,11 @@
 <?php
 
 // Set the session save path explicitly
-session_save_path('/tmp');
+// session_save_path('/tmp');
 
 session_start();
+
+phpinfo();
 
 $server = "db4free.net";
 $username = "adminnocturne";
