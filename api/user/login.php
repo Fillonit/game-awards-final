@@ -48,6 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         echo "<script>alert('Incorrect username or password');</script>";
     }
+
+    session_write_close();
 }
 
 ?>
