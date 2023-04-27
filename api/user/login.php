@@ -1,21 +1,15 @@
 <?php
 session_start();
 
-if(isset($_SESSION['username'])){
-    echo "<script>window.location.href = '/api/pages/index.php';</script>";
-}
-
 $server = "db4free.net";
 $username = "adminnocturne";
 $password = "!es27MiQfAaWb_k";
 $database = "gamingawards";
-$conn;
-$data = mysqli_connect($server, $username, $password, $database);
+$conn = mysqli_connect($server, $username, $password, $database);
 
-if ($data === false) {
+if ($conn === false) {
     die("connection error");
 }
-
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST["username"];
@@ -23,33 +17,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $sql = "SELECT * FROM users WHERE username='" . $username . "' AND password='" . $password . "' ";
 
-    $result = mysqli_query($data, $sql);
+    $result = mysqli_query($conn, $sql);
 
     $row = mysqli_fetch_array($result);
-
 
     if (mysqli_num_rows($result) > 0) {
         if ($row["isAdmin"] == 0) {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 0;
-            // echo "<script>window.location.href = '/api/pages/index.php';</script>";
-            header("location:/api/page/index.php");
+            header("Location: /api/pages/index.php");
             exit();
         } elseif ($row["isAdmin"] == 1) {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 1;
-            header("location:/api/admin/dashboard.php");
+            header("Location: /api/admin/dashboard.php");
             exit();
         }
     } else {
         echo "<script>alert('Incorrect username or password');</script>";
-        // echo "<script>alert('Incorrect username or password');</script>";
     }
 }
 
+mysqli_close($conn);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
