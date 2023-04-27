@@ -5,8 +5,6 @@
 
 session_start();
 
-phpinfo();
-
 $server = "db4free.net";
 $username = "adminnocturne";
 $password = "!es27MiQfAaWb_k";
