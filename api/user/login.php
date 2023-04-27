@@ -1,8 +1,4 @@
 <?php
-
-// Set the session save path explicitly
-// session_save_path('/tmp');
-
 session_start();
 
 $server = "db4free.net";
@@ -30,24 +26,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 0;
-            echo "<script>alert('$_SESSION[username]');</script>";
-            // header("Location: /api/pages/index.php");
+            session_write_close();
+            header("Location: /api/pages/index.php");
             exit();
         } elseif ($row["isAdmin"] == 1) {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 1;
-            // header("Location: /api/admin/dashboard.php");
-            echo "<script>alert('$_SESSION[username]');</script>";
-
+            session_write_close();
+            header("Location: /api/admin/dashboard.php");
             exit();
         }
     } else {
         echo "<script>alert('Incorrect username or password');</script>";
     }
 }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
