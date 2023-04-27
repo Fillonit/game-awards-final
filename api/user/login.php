@@ -26,13 +26,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 0;
-            header("Location: /api/pages/index.php");
+            echo "<script>alert('$_SESSION[username]');</script>";
+            // header("Location: /api/pages/index.php");
             exit();
         } elseif ($row["isAdmin"] == 1) {
             $_SESSION["username"] = $username;
             $_SESSION["userID"] = $row['id'];
             $_SESSION["isAdmin"] = 1;
-            header("Location: /api/admin/dashboard.php");
+            // header("Location: /api/admin/dashboard.php");
+            echo "<script>alert('$_SESSION[username]');</script>";
+
             exit();
         }
     } else {
